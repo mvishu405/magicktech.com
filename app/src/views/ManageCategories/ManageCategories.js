@@ -1,146 +1,115 @@
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
+import CategoriesService from "../../services/CategoriesService";
+import { Button, Card, CardBody, CardHeader, Col, Row, Table } from "reactstrap";
+import { Link } from "react-router-dom";
+import { Redirect } from "react-router-dom";
+import ReactTable from "react-table";
+import "react-table/react-table.css";
+import _ from "lodash";
 
-// class ManageCategories extends Component {
-//     constructor(props) {
-//         super(props);
-//     }
+class ManageCategories extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            loading: true,
+            categories: [],
+        };
+        this.categoriesService = new CategoriesService();
+    }
 
-//     state = {};
+    async componentDidMount() {
+        await this.fetchCategories();
+    }
 
-//     render() {
-//         return (
-//             <div className="animated fadeIn">
-//                 <Col md="6">
-//                     <Card>
-//                         <CardHeader>
-//                             <strong>{this.rtype === "add" ? "Add Code" : "Edit Code"}</strong>
-//                         </CardHeader>
-//                         <CardBody>
-//                             <Form
-//                                 method="post"
-//                                 encType="multipart/form-data"
-//                                 className="form-horizontal"
-//                                 onSubmit={this.handleSubmit}
-//                             >
-//                                 <FormGroup row>
-//                                     <Col md="3">
-//                                         <Label htmlFor="text-input">Code</Label>
-//                                     </Col>
-//                                     <Col xs="12" md="9">
-//                                         <Input
-//                                             type="text"
-//                                             id="code"
-//                                             name="code"
-//                                             placeholder=""
-//                                             onChange={this.handleChange}
-//                                             defaultValue={this.state.code}
-//                                         />
-//                                         <span className="text-danger">{this.err.code}</span>
-//                                     </Col>
-//                                 </FormGroup>
-//                                 <FormGroup row>
-//                                     <Col md="3">
-//                                         <Label htmlFor="text-input">Description</Label>
-//                                     </Col>
-//                                     <Col xs="12" md="9">
-//                                         <Input
-//                                             type="text"
-//                                             id="description"
-//                                             name="description"
-//                                             placeholder=""
-//                                             onChange={this.handleChange}
-//                                             defaultValue={this.state.description}
-//                                         />
-//                                         <span className="text-danger">{this.err.description}</span>
-//                                     </Col>
-//                                 </FormGroup>
-//                                 <FormGroup row>
-//                                     <Col md="3">
-//                                         <Label htmlFor="text-input">Width</Label>
-//                                     </Col>
-//                                     <Col xs="12" md="9">
-//                                         <Input
-//                                             type="number"
-//                                             id="width"
-//                                             name="width"
-//                                             placeholder=""
-//                                             onChange={this.handleChange}
-//                                             defaultValue={this.state.width}
-//                                         />
-//                                         <span className="text-danger">{this.err.width}</span>
-//                                     </Col>
-//                                 </FormGroup>
-//                                 <FormGroup row>
-//                                     <Col md="3">
-//                                         <Label htmlFor="text-input">Depth</Label>
-//                                     </Col>
-//                                     <Col xs="12" md="9">
-//                                         <Input
-//                                             type="number"
-//                                             id="depth"
-//                                             name="depth"
-//                                             placeholder=""
-//                                             onChange={this.handleChange}
-//                                             defaultValue={this.state.depth}
-//                                         />
-//                                         <span className="text-danger">{this.err.depth}</span>
-//                                     </Col>
-//                                 </FormGroup>
-//                                 <FormGroup row>
-//                                     <Col md="3">
-//                                         <Label htmlFor="text-input">Height</Label>
-//                                     </Col>
-//                                     <Col xs="12" md="9">
-//                                         <Input
-//                                             type="number"
-//                                             id="height"
-//                                             name="height"
-//                                             placeholder=""
-//                                             onChange={this.handleChange}
-//                                             defaultValue={this.state.height}
-//                                         />
-//                                         <span className="text-danger">{this.err.height}</span>
-//                                     </Col>
-//                                 </FormGroup>
-//                                 <FormGroup row>
-//                                     <Col md="3">
-//                                         <Label htmlFor="text-input">Cabinet Type</Label>
-//                                     </Col>
-//                                     <Col xs="12" md="9">
-//                                         <Select
-//                                             isClearable
-//                                             name="cabinet_type"
-//                                             id="cabinet_type"
-//                                             value={default_type_opt[this.state.cabinet_type]}
-//                                             onChange={this.handleChangeDropdown.bind(this, "cabinet_type")}
-//                                             options={cabinet_type_opt}
-//                                         />
-//                                         <span className="text-danger">{this.err.cabinet_type}</span>
-//                                     </Col>
-//                                 </FormGroup>
+    async fetchCategories() {
+        try {
+            const categories = await this.categoriesService.getAllCategories();
+            this.setState({ categories, loading: false });
+        } catch (error) {
+            console.log("Error fetching categories:", error);
+        }
+    }
 
-//                                 <Button type="submit" size="sm" color="primary">
-//                                     <i className="fa fa-dot-circle-o" /> Submit
-//                                 </Button>
-//                             </Form>
-//                         </CardBody>
-//                     </Card>
-//                     <div style={this.state.show_msg ? {} : { display: "none" }}>
-//                         <Alert color="success">{this.alert_msg}</Alert>
-//                     </div>
-//                 </Col>
-//             </div>
-//         );
-//     }
-// }
+    handleDeleteCategory(id) {
+        // Implement the delete category logic here
+        console.log("Delete category with id:", id);
+    }
 
-const ManageCategories = () => {
-    const [a] = useState([]);
-    return (
-        <>
-            Vishal Shukla KKMMMM <h1>KKK</h1>
-        </>
-    );
-};
+    render() {
+        const { categories, loading } = this.state;
+
+        const columns = [
+            {
+                Header: "Id",
+                id: "id",
+                maxWidth: 60,
+                accessor: "id",
+                filterable: false,
+                className: "text-center",
+            },
+            {
+                Header: "Name",
+                id: "name",
+                accessor: "name",
+            },
+            {
+                Header: "Action",
+                id: "action",
+                maxWidth: 120,
+                className: "text-center",
+                filterable: false,
+                accessor: (d) => (
+                    <span>
+                        <Link
+                            to={"/categories/edit/?type=edit&id=" + d.id}
+                            className="btn btn-ghost-info mr10 action_btn"
+                        >
+                            <i className="fa fa-edit" title="Edit" />
+                        </Link>
+                        <div
+                            onClick={() => this.handleDeleteCategory(d.id)}
+                            className="btn btn-ghost-danger action_btn"
+                        >
+                            <Link to={"/categories/" + d.id} title="Delete" className="color_red">
+                                <i className="fa fa-trash" />
+                            </Link>
+                        </div>
+                    </span>
+                ),
+            },
+        ];
+
+        return (
+            <div className="react_table animated fadeIn">
+                <Row className="align-items-center">
+                    <Col xs="12" lg="12">
+                        <Card>
+                            <CardHeader>
+                                <i className="fa fa-align-justify" /> Categories List
+                                <Link to="/categories/add">
+                                    <Button outline color="primary" className="float-right">
+                                        Add Categories
+                                    </Button>
+                                </Link>
+                            </CardHeader>
+                            <CardBody>
+                                <ReactTable
+                                    columns={columns}
+                                    data={categories}
+                                    loading={loading}
+                                    filterable
+                                    defaultPageSize={10}
+                                    className="-striped -highlight"
+                                    loadingText="Loading..."
+                                    style={{ height: "650px" }}
+                                />
+                            </CardBody>
+                        </Card>
+                    </Col>
+                </Row>
+            </div>
+        );
+    }
+}
 
 export default ManageCategories;
