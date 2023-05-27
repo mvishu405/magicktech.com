@@ -1,6 +1,7 @@
 module.exports = {
     //   BASE_URL: 'https://quote.magickwoods.in/',
-    BASE_URL: "http://localhost/",
+    // BASE_URL: "http://localhost/",
+    BASE_URL: "https://hglce.localto.net/",
     ACC_DISCOUNT: 20,
     CAB_DISCOUNT: 40,
     ATHOME_DISCOUNT: 20,
