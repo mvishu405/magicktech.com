@@ -1,0 +1,14 @@
+<?php
+// Set the document root to the desired PHP folder
+$docRoot = __DIR__ . '/';
+
+// Create the built-in server command
+$command = sprintf(
+    'php -S %s:%d -t %s',
+    'localhost',
+    '8000',
+    $docRoot
+);
+
+// Execute the server command
+passthru($command);
