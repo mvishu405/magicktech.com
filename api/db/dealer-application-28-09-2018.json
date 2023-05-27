@@ -1,0 +1,1018 @@
+{
+	"id": "bea8d036-4a5a-10c1-484d-640667676416",
+	"name": "dealer-application-loc copy",
+	"description": "",
+	"order": [],
+	"folders": [
+		{
+			"owner": "4685012",
+			"lastUpdatedBy": "4685012",
+			"lastRevision": 4331551017,
+			"folder": null,
+			"id": "eb24f116-cebf-7279-dd85-290bc587f56e",
+			"name": "accessories-master",
+			"description": "",
+			"variables": null,
+			"auth": null,
+			"events": null,
+			"order": [
+				"fcf35be8-9b36-09f7-0fc2-1e0e03485a8b",
+				"acb42fcd-c246-3406-a3c7-0d57b77f9136",
+				"2a2c7e2c-5f00-60a6-4cd5-05710767566c",
+				"f3d2033d-f6e9-6a4d-6bec-6c6efc56b991",
+				"a0c459c9-8496-970c-3d33-466247b95ca7"
+			],
+			"folders_order": [],
+			"collectionId": "bea8d036-4a5a-10c1-484d-640667676416"
+		},
+		{
+			"owner": "4685012",
+			"lastUpdatedBy": "4685012",
+			"lastRevision": 4331551017,
+			"folder": null,
+			"id": "dab9c4d3-a86a-4451-0c5b-f89d2212ee00",
+			"name": "customer-master",
+			"description": "",
+			"variables": null,
+			"auth": null,
+			"events": null,
+			"order": [
+				"58c12ace-0642-e34b-acf0-c3410b8ae145",
+				"6d2d84b0-f88f-d54a-594d-8efd891cc063",
+				"8c072246-77a6-d17c-e11a-26e543317a84",
+				"d21b7641-7baf-472f-6e80-f641dbd9efd7",
+				"02285714-d9c1-24ad-299e-0ea22aab1506"
+			],
+			"folders_order": [],
+			"collectionId": "bea8d036-4a5a-10c1-484d-640667676416"
+		},
+		{
+			"owner": "4685012",
+			"lastUpdatedBy": "4685012",
+			"lastRevision": 4331551017,
+			"folder": null,
+			"id": "39bdefa2-fe2d-9d12-888a-1df96165e95b",
+			"name": "dealer",
+			"description": "",
+			"variables": null,
+			"auth": null,
+			"events": null,
+			"order": [
+				"e93eb5ae-408b-dd6e-f959-c07acfd55c62",
+				"3c1db2bb-01dc-1a61-b482-8d688450b296",
+				"35f402a2-b598-dce8-c400-d5802867737f",
+				"b0bc7fb4-9d1f-67d9-234e-0fe1380c2eb1",
+				"27e564c8-d8a2-db02-d46d-b3467dbe5d78",
+				"40b504de-0593-2eb1-0682-223071f242cc",
+				"e22837ec-6b66-d92d-9c38-7ad958a27dae",
+				"909da4c8-d4ef-43d7-ca29-3ad6cc37f8ae"
+			],
+			"folders_order": [],
+			"collectionId": "bea8d036-4a5a-10c1-484d-640667676416"
+		},
+		{
+			"owner": "4685012",
+			"lastUpdatedBy": "4685012",
+			"lastRevision": 4331551017,
+			"folder": null,
+			"id": "aa1afb7a-972f-f28f-0408-295381860574",
+			"name": "designer-master",
+			"description": "",
+			"variables": null,
+			"auth": null,
+			"events": null,
+			"order": [
+				"c06165da-1b45-0907-f8bb-6ffb5764ea62",
+				"0847d9c0-57b2-68c1-276f-465a04bcd488",
+				"0b91d544-dd90-b0fd-ffde-03496516f576",
+				"76e82da1-d5c4-7e5d-17f8-0159fa12dfd0",
+				"3f16087e-153b-bc2d-25a6-aa694660adb6"
+			],
+			"folders_order": [],
+			"collectionId": "bea8d036-4a5a-10c1-484d-640667676416"
+		},
+		{
+			"owner": "4685012",
+			"lastUpdatedBy": "4685012",
+			"lastRevision": 4331551017,
+			"folder": null,
+			"id": "4a20b069-ce6f-8eb8-ebcb-9666f85d41de",
+			"name": "quote",
+			"description": "",
+			"variables": null,
+			"auth": null,
+			"events": null,
+			"order": [
+				"cb2e25f7-3695-2212-c211-bcfb057f25b1"
+			],
+			"folders_order": [],
+			"collectionId": "bea8d036-4a5a-10c1-484d-640667676416"
+		}
+	],
+	"folders_order": [
+		"39bdefa2-fe2d-9d12-888a-1df96165e95b",
+		"aa1afb7a-972f-f28f-0408-295381860574",
+		"eb24f116-cebf-7279-dd85-290bc587f56e",
+		"dab9c4d3-a86a-4451-0c5b-f89d2212ee00",
+		"4a20b069-ce6f-8eb8-ebcb-9666f85d41de"
+	],
+	"timestamp": 0,
+	"owner": "4685012",
+	"public": false,
+	"hasRequests": true,
+	"requests": [
+		{
+			"id": "02285714-d9c1-24ad-299e-0ea22aab1506",
+			"headers": "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3OGJkN2I1OGYxMWZiMGJkOTU2Yjc2YmI1YTRlYzY5IiwiZW1haWwiOiJ2ZW5rYXRlc2guYXVjc2VAZ21haWwuY29tIiwiaWF0IjoxNTI5NjkxNTM2LCJleHAiOjE1NjEyNDkxMzZ9.17-lEiudj9_LKEVaV5Pm-raO4fGQnetffA9XAuvIeOM\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3OGJkN2I1OGYxMWZiMGJkOTU2Yjc2YmI1YTRlYzY5IiwiZW1haWwiOiJ2ZW5rYXRlc2guYXVjc2VAZ21haWwuY29tIiwiaWF0IjoxNTI5NjkxNTM2LCJleHAiOjE1NjEyNDkxMzZ9.17-lEiudj9_LKEVaV5Pm-raO4fGQnetffA9XAuvIeOM",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://quote.magickwoods.in/api/v2/customers/delete/12",
+			"folder": "dab9c4d3-a86a-4451-0c5b-f89d2212ee00",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1538112834099,
+			"name": "http://quote.magickwoods.in/api/v2/customers/delete/",
+			"description": null,
+			"collectionId": "bea8d036-4a5a-10c1-484d-640667676416",
+			"responses": [],
+			"rawModeData": "{\"id\":\"3\"}",
+			"collection_id": "bea8d036-4a5a-10c1-484d-640667676416"
+		},
+		{
+			"id": "0847d9c0-57b2-68c1-276f-465a04bcd488",
+			"headers": "//Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3OGJkN2I1OGYxMWZiMGJkOTU2Yjc2YmI1YTRlYzY5IiwiZW1haWwiOiJ2ZW5rYXRlc2guYXVjc2VAZ21haWwuY29tIiwiaWF0IjoxNTI5NjkxNTM2LCJleHAiOjE1NjEyNDkxMzZ9.17-lEiudj9_LKEVaV5Pm-raO4fGQnetffA9XAuvIeOM\n//Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3OGJkN2I1OGYxMWZiMGJkOTU2Yjc2YmI1YTRlYzY5IiwiZW1haWwiOiJ2ZW5rYXRlc2guYXVjc2VAZ21haWwuY29tIiwiaWF0IjoxNTI5NjkxNTM2LCJleHAiOjE1NjEyNDkxMzZ9.17-lEiudj9_LKEVaV5Pm-raO4fGQnetffA9XAuvIeOM",
+					"description": "",
+					"enabled": false
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": false
+				}
+			],
+			"url": "http://quote.magickwoods.in/api/v2/designer/add",
+			"folder": "aa1afb7a-972f-f28f-0408-295381860574",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1538111627307,
+			"name": "http://quote.magickwoods.in/api/v2/designer/add",
+			"description": null,
+			"collectionId": "bea8d036-4a5a-10c1-484d-640667676416",
+			"responses": [],
+			"rawModeData": "{\t\n\t\"name\":\"Rosan\", \n\t\"email\":\"rosan8@yopmail.com\",\n\t\"phone\":\"7123456785\"\t\n}",
+			"collection_id": "bea8d036-4a5a-10c1-484d-640667676416"
+		},
+		{
+			"id": "0b91d544-dd90-b0fd-ffde-03496516f576",
+			"headers": "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3OGJkN2I1OGYxMWZiMGJkOTU2Yjc2YmI1YTRlYzY5IiwiZW1haWwiOiJ2ZW5rYXRlc2guYXVjc2VAZ21haWwuY29tIiwiaWF0IjoxNTI5NjkxNTM2LCJleHAiOjE1NjEyNDkxMzZ9.17-lEiudj9_LKEVaV5Pm-raO4fGQnetffA9XAuvIeOM\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3OGJkN2I1OGYxMWZiMGJkOTU2Yjc2YmI1YTRlYzY5IiwiZW1haWwiOiJ2ZW5rYXRlc2guYXVjc2VAZ21haWwuY29tIiwiaWF0IjoxNTI5NjkxNTM2LCJleHAiOjE1NjEyNDkxMzZ9.17-lEiudj9_LKEVaV5Pm-raO4fGQnetffA9XAuvIeOM",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://quote.magickwoods.in/api/v2/designer/get/1",
+			"folder": "aa1afb7a-972f-f28f-0408-295381860574",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1538111291641,
+			"name": "http://quote.magickwoods.in/api/v2/designer/get/",
+			"description": null,
+			"collectionId": "bea8d036-4a5a-10c1-484d-640667676416",
+			"responses": [],
+			"rawModeData": "{\"_id\":\"5b4b88efc4c07d061ec3e73d\"}",
+			"collection_id": "bea8d036-4a5a-10c1-484d-640667676416"
+		},
+		{
+			"id": "27e564c8-d8a2-db02-d46d-b3467dbe5d78",
+			"headers": "//Content-Type: application/json\n//Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3OGJkN2I1OGYxMWZiMGJkOTU2Yjc2YmI1YTRlYzY5IiwiZW1haWwiOiJ2ZW5rYXRlc2guYXVjc2VAZ21haWwuY29tIiwiaWF0IjoxNTI5NjkxNTM2LCJleHAiOjE1NjEyNDkxMzZ9.17-lEiudj9_LKEVaV5Pm-raO4fGQnetffA9XAuvIeOM\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": false
+				},
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3OGJkN2I1OGYxMWZiMGJkOTU2Yjc2YmI1YTRlYzY5IiwiZW1haWwiOiJ2ZW5rYXRlc2guYXVjc2VAZ21haWwuY29tIiwiaWF0IjoxNTI5NjkxNTM2LCJleHAiOjE1NjEyNDkxMzZ9.17-lEiudj9_LKEVaV5Pm-raO4fGQnetffA9XAuvIeOM",
+					"description": "",
+					"enabled": false
+				}
+			],
+			"url": "http://quote.magickwoods.in/api/v2/dealer/update",
+			"folder": "39bdefa2-fe2d-9d12-888a-1df96165e95b",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1538110456355,
+			"name": "http://quote.magickwoods.in/api/v2/dealer/update",
+			"description": null,
+			"collectionId": "bea8d036-4a5a-10c1-484d-640667676416",
+			"responses": [],
+			"rawModeData": "{\n\t\"id\":\"12\", \n\t\"user_name\":\"Rosan\", \n\t\"password\":\"abcdefg\",\n\t\"state\":\"TN\", \n\t\"city\":\"Salem\",\n\t\"address\" : \"mettur\", \n\t\"user_type\":\"D\"\n}",
+			"collection_id": "bea8d036-4a5a-10c1-484d-640667676416"
+		},
+		{
+			"id": "2a2c7e2c-5f00-60a6-4cd5-05710767566c",
+			"headers": "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3OGJkN2I1OGYxMWZiMGJkOTU2Yjc2YmI1YTRlYzY5IiwiZW1haWwiOiJ2ZW5rYXRlc2guYXVjc2VAZ21haWwuY29tIiwiaWF0IjoxNTI5NjkxNTM2LCJleHAiOjE1NjEyNDkxMzZ9.17-lEiudj9_LKEVaV5Pm-raO4fGQnetffA9XAuvIeOM\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3OGJkN2I1OGYxMWZiMGJkOTU2Yjc2YmI1YTRlYzY5IiwiZW1haWwiOiJ2ZW5rYXRlc2guYXVjc2VAZ21haWwuY29tIiwiaWF0IjoxNTI5NjkxNTM2LCJleHAiOjE1NjEyNDkxMzZ9.17-lEiudj9_LKEVaV5Pm-raO4fGQnetffA9XAuvIeOM",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://quote.magickwoods.in/api/v2/accessories/get/64",
+			"folder": "eb24f116-cebf-7279-dd85-290bc587f56e",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1538112361043,
+			"name": "http://quote.magickwoods.in/api/v2/accessories/get/",
+			"description": null,
+			"collectionId": "bea8d036-4a5a-10c1-484d-640667676416",
+			"responses": [],
+			"rawModeData": "{\"_id\":\"5b4b88efc4c07d061ec3e73d\"}",
+			"collection_id": "bea8d036-4a5a-10c1-484d-640667676416"
+		},
+		{
+			"folder": "39bdefa2-fe2d-9d12-888a-1df96165e95b",
+			"id": "35f402a2-b598-dce8-c400-d5802867737f",
+			"name": "http://quote.magickwoods.in/api/v2/dealer/get/",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": null,
+			"rawModeData": "{\"_id\":\"5b4b88efc4c07d061ec3e73d\"}",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3OGJkN2I1OGYxMWZiMGJkOTU2Yjc2YmI1YTRlYzY5IiwiZW1haWwiOiJ2ZW5rYXRlc2guYXVjc2VAZ21haWwuY29tIiwiaWF0IjoxNTI5NjkxNTM2LCJleHAiOjE1NjEyNDkxMzZ9.17-lEiudj9_LKEVaV5Pm-raO4fGQnetffA9XAuvIeOM\nContent-Type: application/json\n",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "http://quote.magickwoods.in/api/v2/dealer/get/1",
+			"preRequestScript": null,
+			"tests": null,
+			"currentHelper": null,
+			"helperAttributes": null,
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3OGJkN2I1OGYxMWZiMGJkOTU2Yjc2YmI1YTRlYzY5IiwiZW1haWwiOiJ2ZW5rYXRlc2guYXVjc2VAZ21haWwuY29tIiwiaWF0IjoxNTI5NjkxNTM2LCJleHAiOjE1NjEyNDkxMzZ9.17-lEiudj9_LKEVaV5Pm-raO4fGQnetffA9XAuvIeOM",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariableData": [],
+			"responses": [],
+			"collectionId": "bea8d036-4a5a-10c1-484d-640667676416",
+			"collection_id": "bea8d036-4a5a-10c1-484d-640667676416"
+		},
+		{
+			"folder": "39bdefa2-fe2d-9d12-888a-1df96165e95b",
+			"id": "3c1db2bb-01dc-1a61-b482-8d688450b296",
+			"name": "http://quote.magickwoods.in/api/v2/dealer/lists",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": null,
+			"rawModeData": "{\"company_name\":\"asdf asdf\", \"display_name\" : \"display_name\", \"type\":\"regulated\"}",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "//Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3OGJkN2I1OGYxMWZiMGJkOTU2Yjc2YmI1YTRlYzY5IiwiZW1haWwiOiJ2ZW5rYXRlc2guYXVjc2VAZ21haWwuY29tIiwiaWF0IjoxNTI5NjkxNTM2LCJleHAiOjE1NjEyNDkxMzZ9.17-lEiudj9_LKEVaV5Pm-raO4fGQnetffA9XAuvIeOM\n//Content-Type: application/json\n",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "http://quote.magickwoods.in/api/v2/dealer/lists",
+			"preRequestScript": null,
+			"tests": null,
+			"currentHelper": null,
+			"helperAttributes": null,
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3OGJkN2I1OGYxMWZiMGJkOTU2Yjc2YmI1YTRlYzY5IiwiZW1haWwiOiJ2ZW5rYXRlc2guYXVjc2VAZ21haWwuY29tIiwiaWF0IjoxNTI5NjkxNTM2LCJleHAiOjE1NjEyNDkxMzZ9.17-lEiudj9_LKEVaV5Pm-raO4fGQnetffA9XAuvIeOM",
+					"description": "",
+					"enabled": false
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": false
+				}
+			],
+			"pathVariableData": [],
+			"responses": [],
+			"collectionId": "bea8d036-4a5a-10c1-484d-640667676416",
+			"collection_id": "bea8d036-4a5a-10c1-484d-640667676416"
+		},
+		{
+			"id": "3f16087e-153b-bc2d-25a6-aa694660adb6",
+			"headers": "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3OGJkN2I1OGYxMWZiMGJkOTU2Yjc2YmI1YTRlYzY5IiwiZW1haWwiOiJ2ZW5rYXRlc2guYXVjc2VAZ21haWwuY29tIiwiaWF0IjoxNTI5NjkxNTM2LCJleHAiOjE1NjEyNDkxMzZ9.17-lEiudj9_LKEVaV5Pm-raO4fGQnetffA9XAuvIeOM\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3OGJkN2I1OGYxMWZiMGJkOTU2Yjc2YmI1YTRlYzY5IiwiZW1haWwiOiJ2ZW5rYXRlc2guYXVjc2VAZ21haWwuY29tIiwiaWF0IjoxNTI5NjkxNTM2LCJleHAiOjE1NjEyNDkxMzZ9.17-lEiudj9_LKEVaV5Pm-raO4fGQnetffA9XAuvIeOM",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://quote.magickwoods.in/api/v2/designer/delete/3",
+			"folder": "aa1afb7a-972f-f28f-0408-295381860574",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1538111942876,
+			"name": "http://quote.magickwoods.in/api/v2/designer/delete/",
+			"description": null,
+			"collectionId": "bea8d036-4a5a-10c1-484d-640667676416",
+			"responses": [],
+			"rawModeData": "{\"id\":\"3\"}",
+			"collection_id": "bea8d036-4a5a-10c1-484d-640667676416"
+		},
+		{
+			"id": "40b504de-0593-2eb1-0682-223071f242cc",
+			"headers": "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3OGJkN2I1OGYxMWZiMGJkOTU2Yjc2YmI1YTRlYzY5IiwiZW1haWwiOiJ2ZW5rYXRlc2guYXVjc2VAZ21haWwuY29tIiwiaWF0IjoxNTI5NjkxNTM2LCJleHAiOjE1NjEyNDkxMzZ9.17-lEiudj9_LKEVaV5Pm-raO4fGQnetffA9XAuvIeOM\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3OGJkN2I1OGYxMWZiMGJkOTU2Yjc2YmI1YTRlYzY5IiwiZW1haWwiOiJ2ZW5rYXRlc2guYXVjc2VAZ21haWwuY29tIiwiaWF0IjoxNTI5NjkxNTM2LCJleHAiOjE1NjEyNDkxMzZ9.17-lEiudj9_LKEVaV5Pm-raO4fGQnetffA9XAuvIeOM",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://quote.magickwoods.in/api/v2/login/change_password/",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "{\"oldpassword\":\"Rosan\", \"newpassword\":\"7123456785\", \"user_id\":\"1\"}",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1538110536626,
+			"name": "http://quote.magickwoods.in/api/v2/login/change_password/",
+			"description": "",
+			"collectionId": "bea8d036-4a5a-10c1-484d-640667676416",
+			"responses": [],
+			"rawModeData": "{\n\t\"user_id\":\"12\", \n\t\"oldpassword\":\"abcdefg\", \n\t\"newpassword\":\"12345678\"\n}",
+			"collection_id": "bea8d036-4a5a-10c1-484d-640667676416",
+			"folder": "39bdefa2-fe2d-9d12-888a-1df96165e95b"
+		},
+		{
+			"id": "58c12ace-0642-e34b-acf0-c3410b8ae145",
+			"headers": "//Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3OGJkN2I1OGYxMWZiMGJkOTU2Yjc2YmI1YTRlYzY5IiwiZW1haWwiOiJ2ZW5rYXRlc2guYXVjc2VAZ21haWwuY29tIiwiaWF0IjoxNTI5NjkxNTM2LCJleHAiOjE1NjEyNDkxMzZ9.17-lEiudj9_LKEVaV5Pm-raO4fGQnetffA9XAuvIeOM\n//Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3OGJkN2I1OGYxMWZiMGJkOTU2Yjc2YmI1YTRlYzY5IiwiZW1haWwiOiJ2ZW5rYXRlc2guYXVjc2VAZ21haWwuY29tIiwiaWF0IjoxNTI5NjkxNTM2LCJleHAiOjE1NjEyNDkxMzZ9.17-lEiudj9_LKEVaV5Pm-raO4fGQnetffA9XAuvIeOM",
+					"description": "",
+					"enabled": false
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": false
+				}
+			],
+			"url": "http://quote.magickwoods.in/api/v2/customers/lists",
+			"folder": "dab9c4d3-a86a-4451-0c5b-f89d2212ee00",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1538112357235,
+			"name": "http://quote.magickwoods.in/api/v2/customers/lists",
+			"description": null,
+			"collectionId": "bea8d036-4a5a-10c1-484d-640667676416",
+			"responses": [],
+			"rawModeData": "{\"company_name\":\"asdf asdf\", \"display_name\" : \"display_name\", \"type\":\"regulated\"}",
+			"collection_id": "bea8d036-4a5a-10c1-484d-640667676416"
+		},
+		{
+			"id": "6d2d84b0-f88f-d54a-594d-8efd891cc063",
+			"headers": "//Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3OGJkN2I1OGYxMWZiMGJkOTU2Yjc2YmI1YTRlYzY5IiwiZW1haWwiOiJ2ZW5rYXRlc2guYXVjc2VAZ21haWwuY29tIiwiaWF0IjoxNTI5NjkxNTM2LCJleHAiOjE1NjEyNDkxMzZ9.17-lEiudj9_LKEVaV5Pm-raO4fGQnetffA9XAuvIeOM\n//Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3OGJkN2I1OGYxMWZiMGJkOTU2Yjc2YmI1YTRlYzY5IiwiZW1haWwiOiJ2ZW5rYXRlc2guYXVjc2VAZ21haWwuY29tIiwiaWF0IjoxNTI5NjkxNTM2LCJleHAiOjE1NjEyNDkxMzZ9.17-lEiudj9_LKEVaV5Pm-raO4fGQnetffA9XAuvIeOM",
+					"description": "",
+					"enabled": false
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": false
+				}
+			],
+			"url": "http://quote.magickwoods.in/api/v2/customers/add",
+			"folder": "dab9c4d3-a86a-4451-0c5b-f89d2212ee00",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1538112621730,
+			"name": "http://quote.magickwoods.in/api/v2/customers/add",
+			"description": null,
+			"collectionId": "bea8d036-4a5a-10c1-484d-640667676416",
+			"responses": [],
+			"rawModeData": "{\t\n    \"dealer_id\": \"1\",\n    \"name\": \"Manoharan\",\n    \"email\": \"manoharan@hugoandborg.ca\",\n    \"phone\": \"9988776655\",\n    \"alternate_phone\": \"\",\n    \"state\": \"TN\",\n    \"city\": \"CHN\",\n    \"address\": \"Salem\",\n    \"comments\": \"Test\",\n    \"lead_source\": \"Test\"\t\n}",
+			"collection_id": "bea8d036-4a5a-10c1-484d-640667676416"
+		},
+		{
+			"id": "76e82da1-d5c4-7e5d-17f8-0159fa12dfd0",
+			"headers": "//Content-Type: application/json\n//Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3OGJkN2I1OGYxMWZiMGJkOTU2Yjc2YmI1YTRlYzY5IiwiZW1haWwiOiJ2ZW5rYXRlc2guYXVjc2VAZ21haWwuY29tIiwiaWF0IjoxNTI5NjkxNTM2LCJleHAiOjE1NjEyNDkxMzZ9.17-lEiudj9_LKEVaV5Pm-raO4fGQnetffA9XAuvIeOM\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": false
+				},
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3OGJkN2I1OGYxMWZiMGJkOTU2Yjc2YmI1YTRlYzY5IiwiZW1haWwiOiJ2ZW5rYXRlc2guYXVjc2VAZ21haWwuY29tIiwiaWF0IjoxNTI5NjkxNTM2LCJleHAiOjE1NjEyNDkxMzZ9.17-lEiudj9_LKEVaV5Pm-raO4fGQnetffA9XAuvIeOM",
+					"description": "",
+					"enabled": false
+				}
+			],
+			"url": "http://quote.magickwoods.in/api/v2/designer/update",
+			"folder": "aa1afb7a-972f-f28f-0408-295381860574",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1538111687447,
+			"name": "http://quote.magickwoods.in/api/v2/designer/update",
+			"description": null,
+			"collectionId": "bea8d036-4a5a-10c1-484d-640667676416",
+			"responses": [],
+			"rawModeData": "{\t\n\t\"id\":\"3\",\n\t\"name\":\"Designer3\", \n\t\"email\":\"rosan8@yopmail.com\",\n\t\"phone\":\"7123456785\"\t\n}",
+			"collection_id": "bea8d036-4a5a-10c1-484d-640667676416"
+		},
+		{
+			"id": "8c072246-77a6-d17c-e11a-26e543317a84",
+			"headers": "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3OGJkN2I1OGYxMWZiMGJkOTU2Yjc2YmI1YTRlYzY5IiwiZW1haWwiOiJ2ZW5rYXRlc2guYXVjc2VAZ21haWwuY29tIiwiaWF0IjoxNTI5NjkxNTM2LCJleHAiOjE1NjEyNDkxMzZ9.17-lEiudj9_LKEVaV5Pm-raO4fGQnetffA9XAuvIeOM\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3OGJkN2I1OGYxMWZiMGJkOTU2Yjc2YmI1YTRlYzY5IiwiZW1haWwiOiJ2ZW5rYXRlc2guYXVjc2VAZ21haWwuY29tIiwiaWF0IjoxNTI5NjkxNTM2LCJleHAiOjE1NjEyNDkxMzZ9.17-lEiudj9_LKEVaV5Pm-raO4fGQnetffA9XAuvIeOM",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://quote.magickwoods.in/api/v2/customers/get/1",
+			"folder": "dab9c4d3-a86a-4451-0c5b-f89d2212ee00",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1538112385170,
+			"name": "http://quote.magickwoods.in/api/v2/customers/get/",
+			"description": null,
+			"collectionId": "bea8d036-4a5a-10c1-484d-640667676416",
+			"responses": [],
+			"rawModeData": "{\"_id\":\"5b4b88efc4c07d061ec3e73d\"}",
+			"collection_id": "bea8d036-4a5a-10c1-484d-640667676416"
+		},
+		{
+			"id": "909da4c8-d4ef-43d7-ca29-3ad6cc37f8ae",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://quote.magickwoods.in/api/v2/login/logout",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1538111114225,
+			"name": "http://quote.magickwoods.in/api/v2/login/logout",
+			"description": "",
+			"collectionId": "bea8d036-4a5a-10c1-484d-640667676416",
+			"responses": [],
+			"rawModeData": "12",
+			"collection_id": "bea8d036-4a5a-10c1-484d-640667676416",
+			"folder": "39bdefa2-fe2d-9d12-888a-1df96165e95b"
+		},
+		{
+			"id": "a0c459c9-8496-970c-3d33-466247b95ca7",
+			"headers": "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3OGJkN2I1OGYxMWZiMGJkOTU2Yjc2YmI1YTRlYzY5IiwiZW1haWwiOiJ2ZW5rYXRlc2guYXVjc2VAZ21haWwuY29tIiwiaWF0IjoxNTI5NjkxNTM2LCJleHAiOjE1NjEyNDkxMzZ9.17-lEiudj9_LKEVaV5Pm-raO4fGQnetffA9XAuvIeOM\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3OGJkN2I1OGYxMWZiMGJkOTU2Yjc2YmI1YTRlYzY5IiwiZW1haWwiOiJ2ZW5rYXRlc2guYXVjc2VAZ21haWwuY29tIiwiaWF0IjoxNTI5NjkxNTM2LCJleHAiOjE1NjEyNDkxMzZ9.17-lEiudj9_LKEVaV5Pm-raO4fGQnetffA9XAuvIeOM",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://quote.magickwoods.in/api/v2/accessories/delete/64",
+			"folder": "eb24f116-cebf-7279-dd85-290bc587f56e",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1538112151575,
+			"name": "http://quote.magickwoods.in/api/v2/accessories/delete/",
+			"description": null,
+			"collectionId": "bea8d036-4a5a-10c1-484d-640667676416",
+			"responses": [],
+			"rawModeData": "{\"id\":\"3\"}",
+			"collection_id": "bea8d036-4a5a-10c1-484d-640667676416"
+		},
+		{
+			"id": "acb42fcd-c246-3406-a3c7-0d57b77f9136",
+			"headers": "//Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3OGJkN2I1OGYxMWZiMGJkOTU2Yjc2YmI1YTRlYzY5IiwiZW1haWwiOiJ2ZW5rYXRlc2guYXVjc2VAZ21haWwuY29tIiwiaWF0IjoxNTI5NjkxNTM2LCJleHAiOjE1NjEyNDkxMzZ9.17-lEiudj9_LKEVaV5Pm-raO4fGQnetffA9XAuvIeOM\n//Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3OGJkN2I1OGYxMWZiMGJkOTU2Yjc2YmI1YTRlYzY5IiwiZW1haWwiOiJ2ZW5rYXRlc2guYXVjc2VAZ21haWwuY29tIiwiaWF0IjoxNTI5NjkxNTM2LCJleHAiOjE1NjEyNDkxMzZ9.17-lEiudj9_LKEVaV5Pm-raO4fGQnetffA9XAuvIeOM",
+					"description": "",
+					"enabled": false
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": false
+				}
+			],
+			"url": "http://quote.magickwoods.in/api/v2/accessories/add",
+			"folder": "eb24f116-cebf-7279-dd85-290bc587f56e",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1538112037137,
+			"name": "http://quote.magickwoods.in/api/v2/accessories/add",
+			"description": null,
+			"collectionId": "bea8d036-4a5a-10c1-484d-640667676416",
+			"responses": [],
+			"rawModeData": "{\t\n\t\"name\":\"Accessoreis1\", \n\t\"code\":\"Acc0001\",\n\t\"price\":\"399\"\t\n}",
+			"collection_id": "bea8d036-4a5a-10c1-484d-640667676416"
+		},
+		{
+			"id": "b0bc7fb4-9d1f-67d9-234e-0fe1380c2eb1",
+			"headers": "//Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3OGJkN2I1OGYxMWZiMGJkOTU2Yjc2YmI1YTRlYzY5IiwiZW1haWwiOiJ2ZW5rYXRlc2guYXVjc2VAZ21haWwuY29tIiwiaWF0IjoxNTI5NjkxNTM2LCJleHAiOjE1NjEyNDkxMzZ9.17-lEiudj9_LKEVaV5Pm-raO4fGQnetffA9XAuvIeOM\n//Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3OGJkN2I1OGYxMWZiMGJkOTU2Yjc2YmI1YTRlYzY5IiwiZW1haWwiOiJ2ZW5rYXRlc2guYXVjc2VAZ21haWwuY29tIiwiaWF0IjoxNTI5NjkxNTM2LCJleHAiOjE1NjEyNDkxMzZ9.17-lEiudj9_LKEVaV5Pm-raO4fGQnetffA9XAuvIeOM",
+					"description": "",
+					"enabled": false
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": false
+				}
+			],
+			"url": "http://quote.magickwoods.in/api/v2/dealer/add",
+			"folder": "39bdefa2-fe2d-9d12-888a-1df96165e95b",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1538110297254,
+			"name": "http://quote.magickwoods.in/api/v2/dealer/add",
+			"description": null,
+			"collectionId": "bea8d036-4a5a-10c1-484d-640667676416",
+			"responses": [],
+			"rawModeData": "{\t\n\t\"user_name\":\"Rosan\", \n\t\"phone\":\"7123456785\", \n\t\"email\":\"rosan8@yopmail.com\", \n\t\"password\":\"abc\",\n\t\"logo\":\"logo.png\",\n\t\"state\":\"TN\",\n\t\"city\":\"Salem\",\n\t\"address\" : \"mettur\", \n\t\"user_type\":\"D\"\n}",
+			"collection_id": "bea8d036-4a5a-10c1-484d-640667676416"
+		},
+		{
+			"id": "c06165da-1b45-0907-f8bb-6ffb5764ea62",
+			"headers": "//Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3OGJkN2I1OGYxMWZiMGJkOTU2Yjc2YmI1YTRlYzY5IiwiZW1haWwiOiJ2ZW5rYXRlc2guYXVjc2VAZ21haWwuY29tIiwiaWF0IjoxNTI5NjkxNTM2LCJleHAiOjE1NjEyNDkxMzZ9.17-lEiudj9_LKEVaV5Pm-raO4fGQnetffA9XAuvIeOM\n//Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3OGJkN2I1OGYxMWZiMGJkOTU2Yjc2YmI1YTRlYzY5IiwiZW1haWwiOiJ2ZW5rYXRlc2guYXVjc2VAZ21haWwuY29tIiwiaWF0IjoxNTI5NjkxNTM2LCJleHAiOjE1NjEyNDkxMzZ9.17-lEiudj9_LKEVaV5Pm-raO4fGQnetffA9XAuvIeOM",
+					"description": "",
+					"enabled": false
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": false
+				}
+			],
+			"url": "http://quote.magickwoods.in/api/v2/designer/lists",
+			"folder": "aa1afb7a-972f-f28f-0408-295381860574",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1538111278797,
+			"name": "http://quote.magickwoods.in/api/v2/designer/lists",
+			"description": null,
+			"collectionId": "bea8d036-4a5a-10c1-484d-640667676416",
+			"responses": [],
+			"rawModeData": "{\"company_name\":\"asdf asdf\", \"display_name\" : \"display_name\", \"type\":\"regulated\"}",
+			"collection_id": "bea8d036-4a5a-10c1-484d-640667676416"
+		},
+		{
+			"id": "cb2e25f7-3695-2212-c211-bcfb057f25b1",
+			"headers": "//Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3OGJkN2I1OGYxMWZiMGJkOTU2Yjc2YmI1YTRlYzY5IiwiZW1haWwiOiJ2ZW5rYXRlc2guYXVjc2VAZ21haWwuY29tIiwiaWF0IjoxNTI5NjkxNTM2LCJleHAiOjE1NjEyNDkxMzZ9.17-lEiudj9_LKEVaV5Pm-raO4fGQnetffA9XAuvIeOM\n//Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3OGJkN2I1OGYxMWZiMGJkOTU2Yjc2YmI1YTRlYzY5IiwiZW1haWwiOiJ2ZW5rYXRlc2guYXVjc2VAZ21haWwuY29tIiwiaWF0IjoxNTI5NjkxNTM2LCJleHAiOjE1NjEyNDkxMzZ9.17-lEiudj9_LKEVaV5Pm-raO4fGQnetffA9XAuvIeOM",
+					"description": "",
+					"enabled": false
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": false
+				}
+			],
+			"url": "http://quote.magickwoods.in/api/index.php?type=get_quotes",
+			"folder": "4a20b069-ce6f-8eb8-ebcb-9666f85d41de",
+			"queryParams": [
+				{
+					"key": "type",
+					"value": "get_quotes",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1538113433430,
+			"name": "http://quote.magickwoods.in/api//api/index.php?type=get_quotes",
+			"description": null,
+			"collectionId": "bea8d036-4a5a-10c1-484d-640667676416",
+			"responses": [],
+			"rawModeData": "{\"company_name\":\"asdf asdf\", \"display_name\" : \"display_name\", \"type\":\"regulated\"}",
+			"collection_id": "bea8d036-4a5a-10c1-484d-640667676416"
+		},
+		{
+			"id": "d21b7641-7baf-472f-6e80-f641dbd9efd7",
+			"headers": "//Content-Type: application/json\n//Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3OGJkN2I1OGYxMWZiMGJkOTU2Yjc2YmI1YTRlYzY5IiwiZW1haWwiOiJ2ZW5rYXRlc2guYXVjc2VAZ21haWwuY29tIiwiaWF0IjoxNTI5NjkxNTM2LCJleHAiOjE1NjEyNDkxMzZ9.17-lEiudj9_LKEVaV5Pm-raO4fGQnetffA9XAuvIeOM\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": false
+				},
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3OGJkN2I1OGYxMWZiMGJkOTU2Yjc2YmI1YTRlYzY5IiwiZW1haWwiOiJ2ZW5rYXRlc2guYXVjc2VAZ21haWwuY29tIiwiaWF0IjoxNTI5NjkxNTM2LCJleHAiOjE1NjEyNDkxMzZ9.17-lEiudj9_LKEVaV5Pm-raO4fGQnetffA9XAuvIeOM",
+					"description": "",
+					"enabled": false
+				}
+			],
+			"url": "http://quote.magickwoods.in/api/v2/customers/update",
+			"folder": "dab9c4d3-a86a-4451-0c5b-f89d2212ee00",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1538112818022,
+			"name": "http://quote.magickwoods.in/api/v2/customers/update",
+			"description": null,
+			"collectionId": "bea8d036-4a5a-10c1-484d-640667676416",
+			"responses": [],
+			"rawModeData": "{\t\n    \"id\": \"12\",\n    \"dealer_id\": \"1\",\n    \"name\":\"Mano\",\n    \"alternate_phone\": \"\",\n    \"state\": \"TN\",\n    \"city\": \"CHN\",\n    \"address\": \"Salem\",\n    \"comments\": \"Test\",\n    \"lead_source\": \"Test\"\t\n}",
+			"collection_id": "bea8d036-4a5a-10c1-484d-640667676416"
+		},
+		{
+			"id": "e22837ec-6b66-d92d-9c38-7ad958a27dae",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://quote.magickwoods.in/api/v2/login/verify_user",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1538110864282,
+			"name": "http://quote.magickwoods.in/api/v2/login/verify_user",
+			"description": "",
+			"collectionId": "bea8d036-4a5a-10c1-484d-640667676416",
+			"responses": [],
+			"rawModeData": "{\n\t\"email\": \"rosan8@yopmail.com\", \n\t\"password\": \"12345678\"\n}",
+			"collection_id": "bea8d036-4a5a-10c1-484d-640667676416",
+			"folder": "39bdefa2-fe2d-9d12-888a-1df96165e95b"
+		},
+		{
+			"folder": "39bdefa2-fe2d-9d12-888a-1df96165e95b",
+			"id": "e93eb5ae-408b-dd6e-f959-c07acfd55c62",
+			"name": "http://quote.magickwoods.in/api/v2/dealer/delete/",
+			"dataMode": "raw",
+			"data": [],
+			"auth": null,
+			"events": null,
+			"rawModeData": "{\"_id\":\"5b48f1bf3e8dd53fac1e1bb0\"}",
+			"descriptionFormat": null,
+			"description": null,
+			"variables": null,
+			"headers": "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3OGJkN2I1OGYxMWZiMGJkOTU2Yjc2YmI1YTRlYzY5IiwiZW1haWwiOiJ2ZW5rYXRlc2guYXVjc2VAZ21haWwuY29tIiwiaWF0IjoxNTI5NjkxNTM2LCJleHAiOjE1NjEyNDkxMzZ9.17-lEiudj9_LKEVaV5Pm-raO4fGQnetffA9XAuvIeOM\nContent-Type: application/json\n",
+			"method": "DELETE",
+			"pathVariables": {},
+			"url": "http://quote.magickwoods.in/api/v2/dealer/delete/12",
+			"preRequestScript": null,
+			"tests": null,
+			"currentHelper": null,
+			"helperAttributes": null,
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3OGJkN2I1OGYxMWZiMGJkOTU2Yjc2YmI1YTRlYzY5IiwiZW1haWwiOiJ2ZW5rYXRlc2guYXVjc2VAZ21haWwuY29tIiwiaWF0IjoxNTI5NjkxNTM2LCJleHAiOjE1NjEyNDkxMzZ9.17-lEiudj9_LKEVaV5Pm-raO4fGQnetffA9XAuvIeOM",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariableData": [],
+			"responses": [],
+			"collectionId": "bea8d036-4a5a-10c1-484d-640667676416",
+			"collection_id": "bea8d036-4a5a-10c1-484d-640667676416"
+		},
+		{
+			"id": "f3d2033d-f6e9-6a4d-6bec-6c6efc56b991",
+			"headers": "//Content-Type: application/json\n//Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3OGJkN2I1OGYxMWZiMGJkOTU2Yjc2YmI1YTRlYzY5IiwiZW1haWwiOiJ2ZW5rYXRlc2guYXVjc2VAZ21haWwuY29tIiwiaWF0IjoxNTI5NjkxNTM2LCJleHAiOjE1NjEyNDkxMzZ9.17-lEiudj9_LKEVaV5Pm-raO4fGQnetffA9XAuvIeOM\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": false
+				},
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3OGJkN2I1OGYxMWZiMGJkOTU2Yjc2YmI1YTRlYzY5IiwiZW1haWwiOiJ2ZW5rYXRlc2guYXVjc2VAZ21haWwuY29tIiwiaWF0IjoxNTI5NjkxNTM2LCJleHAiOjE1NjEyNDkxMzZ9.17-lEiudj9_LKEVaV5Pm-raO4fGQnetffA9XAuvIeOM",
+					"description": "",
+					"enabled": false
+				}
+			],
+			"url": "http://quote.magickwoods.in/api/v2/accessories/update",
+			"folder": "eb24f116-cebf-7279-dd85-290bc587f56e",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1538112125558,
+			"name": "http://quote.magickwoods.in/api/v2/accessories/update",
+			"description": null,
+			"collectionId": "bea8d036-4a5a-10c1-484d-640667676416",
+			"responses": [],
+			"rawModeData": "{\t\n\t\"id\":\"64\",\n\t\"name\":\"Accessoreis1\", \n\t\"code\":\"Acc1\",\n\t\"price\":\"400\"\t\n}",
+			"collection_id": "bea8d036-4a5a-10c1-484d-640667676416"
+		},
+		{
+			"id": "fcf35be8-9b36-09f7-0fc2-1e0e03485a8b",
+			"headers": "//Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3OGJkN2I1OGYxMWZiMGJkOTU2Yjc2YmI1YTRlYzY5IiwiZW1haWwiOiJ2ZW5rYXRlc2guYXVjc2VAZ21haWwuY29tIiwiaWF0IjoxNTI5NjkxNTM2LCJleHAiOjE1NjEyNDkxMzZ9.17-lEiudj9_LKEVaV5Pm-raO4fGQnetffA9XAuvIeOM\n//Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3OGJkN2I1OGYxMWZiMGJkOTU2Yjc2YmI1YTRlYzY5IiwiZW1haWwiOiJ2ZW5rYXRlc2guYXVjc2VAZ21haWwuY29tIiwiaWF0IjoxNTI5NjkxNTM2LCJleHAiOjE1NjEyNDkxMzZ9.17-lEiudj9_LKEVaV5Pm-raO4fGQnetffA9XAuvIeOM",
+					"description": "",
+					"enabled": false
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": false
+				}
+			],
+			"url": "http://quote.magickwoods.in/api/v2/accessories/lists",
+			"folder": "eb24f116-cebf-7279-dd85-290bc587f56e",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1538111877805,
+			"name": "http://quote.magickwoods.in/api/v2/accessories/lists",
+			"description": null,
+			"collectionId": "bea8d036-4a5a-10c1-484d-640667676416",
+			"responses": [],
+			"rawModeData": "{\"company_name\":\"asdf asdf\", \"display_name\" : \"display_name\", \"type\":\"regulated\"}",
+			"collection_id": "bea8d036-4a5a-10c1-484d-640667676416"
+		}
+	]
+}

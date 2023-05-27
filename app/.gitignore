@@ -1,0 +1,49 @@
+# Ignore compiled binaries
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Ignore dependencies
+/node_modules
+/bower_components
+
+# Ignore build output
+/build
+/dist
+
+# Ignore logs and temp files
+/logs
+/tmp
+
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE and editor files
+/.idea
+/.vscode
+*.sublime-project
+*.sublime-workspace
+
+# Ignore system-specific files
+/.vagrant
+/.DS_Store
+/._*
+/.Spotlight-V100
+/.Trashes
+/ehthumbs.db
+/desktop.ini
+/$RECYCLE.BIN/
+
+# Ignore database files
+*.sqlite
+*.sqlite3
+
+# Ignore environment-specific files
+.env
+.env.local
+.env.*.local
+
+# Ignore miscellaneous
+*.swp

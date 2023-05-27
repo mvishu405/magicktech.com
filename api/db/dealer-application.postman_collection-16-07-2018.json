@@ -1,0 +1,148 @@
+{
+	"variables": [],
+	"info": {
+		"name": "dealer-application-development",
+		"_postman_id": "d7168087-7ca0-6487-7df2-c3cdfc08c2cf",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "users",
+			"description": "",
+			"item": [
+				{
+					"name": "http://54.219.226.168/api/v2/dealer/delete",
+					"request": {
+						"url": "http://54.219.226.168/api/v2/dealer/delete/2",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3OGJkN2I1OGYxMWZiMGJkOTU2Yjc2YmI1YTRlYzY5IiwiZW1haWwiOiJ2ZW5rYXRlc2guYXVjc2VAZ21haWwuY29tIiwiaWF0IjoxNTI5NjkxNTM2LCJleHAiOjE1NjEyNDkxMzZ9.17-lEiudj9_LKEVaV5Pm-raO4fGQnetffA9XAuvIeOM",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"_id\":\"5b48f1bf3e8dd53fac1e1bb0\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "http://54.219.226.168/api/v2/dealer/lists",
+					"request": {
+						"url": "http://54.219.226.168/api/v2/dealer/lists",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3OGJkN2I1OGYxMWZiMGJkOTU2Yjc2YmI1YTRlYzY5IiwiZW1haWwiOiJ2ZW5rYXRlc2guYXVjc2VAZ21haWwuY29tIiwiaWF0IjoxNTI5NjkxNTM2LCJleHAiOjE1NjEyNDkxMzZ9.17-lEiudj9_LKEVaV5Pm-raO4fGQnetffA9XAuvIeOM",
+								"description": "",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"company_name\":\"asdf asdf\", \"display_name\" : \"display_name\", \"type\":\"regulated\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "http://54.219.226.168/api/v2/dealer/get/",
+					"request": {
+						"url": "http://54.219.226.168/api/v2/dealer/get/2",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3OGJkN2I1OGYxMWZiMGJkOTU2Yjc2YmI1YTRlYzY5IiwiZW1haWwiOiJ2ZW5rYXRlc2guYXVjc2VAZ21haWwuY29tIiwiaWF0IjoxNTI5NjkxNTM2LCJleHAiOjE1NjEyNDkxMzZ9.17-lEiudj9_LKEVaV5Pm-raO4fGQnetffA9XAuvIeOM",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"_id\":\"5b4b88efc4c07d061ec3e73d\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "http://54.219.226.168/api/v2/dealer/add",
+					"request": {
+						"url": "http://54.219.226.168/api/v2/dealer/add",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3OGJkN2I1OGYxMWZiMGJkOTU2Yjc2YmI1YTRlYzY5IiwiZW1haWwiOiJ2ZW5rYXRlc2guYXVjc2VAZ21haWwuY29tIiwiaWF0IjoxNTI5NjkxNTM2LCJleHAiOjE1NjEyNDkxMzZ9.17-lEiudj9_LKEVaV5Pm-raO4fGQnetffA9XAuvIeOM",
+								"description": "",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"user_name\":\"Rosan\", \"phone\":\"987456212\", \"email\":\"rosan1@yopmail.com\", \"password\":\"a\", \"address\" : \"mettur\", \"user_type\":\"D\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "http://54.219.226.168/api/v2/Dealer/update",
+					"request": {
+						"url": "http://54.219.226.168/dealerapi/dealer/update",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3OGJkN2I1OGYxMWZiMGJkOTU2Yjc2YmI1YTRlYzY5IiwiZW1haWwiOiJ2ZW5rYXRlc2guYXVjc2VAZ21haWwuY29tIiwiaWF0IjoxNTI5NjkxNTM2LCJleHAiOjE1NjEyNDkxMzZ9.17-lEiudj9_LKEVaV5Pm-raO4fGQnetffA9XAuvIeOM",
+								"description": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\":\"16\", \"user_name\":\"Rosanessss\", \"password\":\"abcdeb\", \"address\" : \"mettur\", \"user_type\":\"D\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

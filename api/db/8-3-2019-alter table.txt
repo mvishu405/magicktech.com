@@ -1,0 +1,9 @@
+ALTER TABLE quote_line_items
+ADD type varchar(1) DEFAULT 'C' FOR type
+
+
+ALTER TABLE quote_line_items
+ADD other_service_name varchar(100) DEFAULT Null FOR other_service_name
+
+ALTER TABLE quote_line_items
+ADD other_service_price int(11) DEFAULT Null FOR other_service_price

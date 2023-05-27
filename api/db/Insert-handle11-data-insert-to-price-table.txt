@@ -1,0 +1,23 @@
+https://stackoverflow.com/questions/224732/sql-update-from-one-table-to-another-based-on-a-id-match
+Table column code_id get from codes table matched code
+======================================================
+UPDATE 
+     handle11 t1, 
+     codes t2
+SET 
+     t1.code_id = t2.id 
+WHERE
+     t1.code = t2.code;
+
+
+
+https://stackoverflow.com/questions/5907206/mysql-insert-into-tbl-select-from-another-table-and-some-default-values
+Insert data value from another table
+====================================
+
+INSERT INTO price_mapping (code_id, component_id, quantity, cost)
+SELECT code_id, component_id, quantity, cost from `handle11`
+
+
+
+mysql -u root -p dealer_application < handle11.sql

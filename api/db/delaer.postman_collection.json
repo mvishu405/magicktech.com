@@ -1,0 +1,276 @@
+{
+	"variables": [],
+	"info": {
+		"name": "delaer",
+		"_postman_id": "1690e99b-1d4b-4df6-2af6-b9883f88c217",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"url": {
+					"raw": "http://localhost/dealerapplication/api/index.php?type=login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"dealerapplication",
+						"api",
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "login",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"user_name\": \"\", \"user_pass\": \"a\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "customer",
+			"request": {
+				"url": {
+					"raw": "http://localhost/dealerapplication/api/index.php?type=add_customer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"dealerapplication",
+						"api",
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "add_customer",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"name\":\"Raman\",\r\n \"email\":\"raman1@gmail.com\",\r\n \"address\":\"Coimbatore\",\r\n \"phone\":\"7896541230\",\r\n \"alternate_phone\":\"8745632109\",\r\n \"comments\":\"Refer from KSR\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "add_quote",
+			"request": {
+				"url": {
+					"raw": "http://localhost/dealerapplication/api/index.php?type=add_quote",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"dealerapplication",
+						"api",
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "add_quote",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"dealer_id\":\"1\",\r\n \"customer_id\":\"4\",\r\n \"quote_id\":\"11\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "all_components",
+			"request": {
+				"url": {
+					"raw": "http://localhost/dealerapplication/api/index.php?type=all_components",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"dealerapplication",
+						"api",
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "all_components",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "price_mapping",
+			"request": {
+				"url": {
+					"raw": "http://localhost/dealerapplication/api/index.php?type=price_mapping",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"dealerapplication",
+						"api",
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "price_mapping",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"code_id\":\"1\",\r\n \"component_id\":\"14\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Quote_line_item",
+			"request": {
+				"url": {
+					"raw": "http://localhost/dealerapplication/api/index.php?type=quote_line_item",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"dealerapplication",
+						"api",
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "quote_line_item",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\"id\":1,\"code_id\":\"1\",\"cabinet_carcass_id\":\"2\",\"cabinet_shutter_id\":\"6\",\"drawers_id\":\"28\",\"hinges_id\":\"15\",\"handles_id\":\"17\",\"flap_up_id\":\"30\",\"quote_id\":\"1\",\"cabinet_type_id\":\"1\"},\n{\"id\":1,\"code_id\":\"2\",\"cabinet_carcass_id\":\"2\",\"cabinet_shutter_id\":\"6\",\"drawers_id\":\"28\",\"hinges_id\":\"15\",\"handles_id\":\"17\",\"flap_up_id\":\"30\",\"quote_id\":\"1\",\"cabinet_type_id\":\"1\"}\n]"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get_quotes",
+			"request": {
+				"url": {
+					"raw": "http://localhost/dealerapp/api/index.php?type=get_quotes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"dealerapp",
+						"api",
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "get_quotes",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
