@@ -6,7 +6,7 @@ $docRoot = __DIR__ . '/';
 $command = sprintf(
     'php -S %s:%d -t %s',
     'localhost',
-    '8000',
+    '80',
     $docRoot
 );
 
