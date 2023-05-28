@@ -72,8 +72,9 @@ class Products extends CI_Controller {
 		$this->_validate();		
 		$data = array(
 			'name' => $inputs['name'],
+			'category_id' => $inputs['category_id'],
 		);
-		$result = $this->codes_model->add($data);
+		$result = $this->Products_model->add($data);
 
 		if($result == true){
 			$return['success'] = true;
@@ -89,7 +90,7 @@ class Products extends CI_Controller {
 	public function get($id)
 	{
 		$this->login_model->checktoken();
-		$result = $this->codes_model->get_by_id($id);
+		$result = $this->Products_model->get_by_id($id);
 		if($result == false){
 			$return['success'] = false;
 			$return['msg'] = "Data not found!";				
@@ -108,10 +109,12 @@ class Products extends CI_Controller {
 		$this->_validate();
 		$data = array(
 			'name' => $inputs['name'],
+			'category_id' => $inputs['category_id'],
+			'status' => $inputs['status'],
 		);
 
 		if($data){
-			$result = $this->codes_model->update(array('id' => $inputs['id']), $data);
+			$result = $this->Products_model->update(array('id' => $inputs['id']), $data);
 			$return['success'] = true;
 			$return['msg'] = "Data updated successfully";			
 		}else{
@@ -125,7 +128,7 @@ class Products extends CI_Controller {
 	public function delete($id)
 	{
 		$this->login_model->checktoken();
-		$result = $this->codes_model->delete($id);
+		$result = $this->Products_model->delete($id);
 		if($result == true){
 			$return['success'] = true;
 			$return['msg'] = "Data deleted successfully";
@@ -149,6 +152,11 @@ class Products extends CI_Controller {
 		{
 			$return['success'] = FALSE;
 			$return['err']['name'] = 'Name is required';
+		}
+		if($inputs['category_id'] == '')
+		{
+			$return['success'] = FALSE;
+			$return['err']['category_id'] = 'Category is required';
 		}
 	}
 }
