@@ -24,6 +24,18 @@ class Categories_model extends CI_Model {
 		return $return;
     }
 
+	public function getAllCategories() {
+        // Fetch categories from the database
+		$query = $this->db->select('id, name, parent_id, status')
+                  ->from('categories')
+                  ->get();
+		foreach ($query->result_array() as $rows)
+		{
+			$return[] = (array) $rows;
+		}
+		return $return;
+    }
+
     public function getCategorySubCategories($categoryId) {
         // Fetch subcategories based on the category ID from the database
         $this->db->where('parent_id', $categoryId);

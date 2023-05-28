@@ -13,7 +13,25 @@ class Categories extends CI_Controller {
 		$this->load->helper('form');
 	}
 
-    public function getAllParentCategories() {
+    public function getAllCategories() {
+		$this->login_model->checktoken();
+        $results = $this->Categories_model->getAllCategories();
+		foreach($results as $result) {
+			$new[] = $result;
+		}
+
+		if($result == false) {
+			$return['success'] = false;
+			$return['msg'] = "Failed to load a data!.";
+		}else {
+			$return['success'] = true;
+			$return['msg'] = "Data loaded successfully";
+			$return['data'] = $new;
+		}
+		echo json_encode($return);
+    }
+
+	public function getAllParentCategories() {
 		$this->login_model->checktoken();
         $results = $this->Categories_model->getAllParentCategories();
 		foreach($results as $result) {
