@@ -107,12 +107,14 @@ class Categories extends CI_Controller {
 	{
 		global $inputs;	
 		$this->login_model->checktoken();
-		$this->_validate();		
+		$this->_validate();
 		$data = array(
 			'name' => $inputs['name'],
+			'parent_id' => $inputs['parent_id'],
 		);
-		$result = $this->codes_model->add($data);
 
+		$result = $this->Categories_model->add($data);
+		
 		if($result == true){
 			$return['success'] = true;
 			$return['msg'] = "Data added successfully";
@@ -127,7 +129,7 @@ class Categories extends CI_Controller {
 	public function get($id)
 	{
 		$this->login_model->checktoken();
-		$result = $this->codes_model->get_by_id($id);
+		$result = $this->Categories_model->get_by_id($id);
 		if($result == false){
 			$return['success'] = false;
 			$return['msg'] = "Data not found!";				
@@ -146,10 +148,12 @@ class Categories extends CI_Controller {
 		$this->_validate();
 		$data = array(
 			'name' => $inputs['name'],
+			'parent_id' => $inputs['parent_id'],
+			'status' => $inputs['status'],
 		);
 
 		if($data){
-			$result = $this->codes_model->update(array('id' => $inputs['id']), $data);
+			$result = $this->Categories_model->update(array('id' => $inputs['id']), $data);
 			$return['success'] = true;
 			$return['msg'] = "Data updated successfully";			
 		}else{
@@ -162,8 +166,9 @@ class Categories extends CI_Controller {
 
 	public function delete($id)
 	{
+		//update the related parent_id status to 0
 		$this->login_model->checktoken();
-		$result = $this->codes_model->delete($id);
+		$result = $this->Categories_model->delete($id);
 		if($result == true){
 			$return['success'] = true;
 			$return['msg'] = "Data deleted successfully";
@@ -187,6 +192,12 @@ class Categories extends CI_Controller {
 		{
 			$return['success'] = FALSE;
 			$return['err']['name'] = 'Name is required';
+		}
+
+		if($inputs['parent_id'] == '')
+		{
+			$return['success'] = FALSE;
+			$return['err']['parent_id'] = 'Parent Category is required';
 		}
 	}
 }

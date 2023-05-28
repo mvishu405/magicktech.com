@@ -64,10 +64,12 @@ class Categories_model extends CI_Model {
 
 	function get_lists()
 	{
-		$this->db->select('id, name');
+		$this->db->select('id, name, parent_id, status');
 		$this->db->from($this->table);
-		$this->db->where('status','1');
-		$this->db->where('parent_id IS NULL');
+		$this->db->group_start();
+		$this->db->where('status', '1');
+		$this->db->or_where('parent_id IN (SELECT id FROM ' . $this->table . ' WHERE status = 1)');
+		$this->db->group_end();
 		$query = $this->db->get();
 
 		foreach ($query->result_array() as $rows)
@@ -86,7 +88,7 @@ class Categories_model extends CI_Model {
 
 	public function get_by_id($id)
 	{
-		$this->db->select('id, name, date_created, data_modified');
+		$this->db->select('id, name, parent_id, status');
 		$this->db->from($this->table);
 		$this->db->where('id',$id);
 		$this->db->where('status', 1);
@@ -105,6 +107,6 @@ class Categories_model extends CI_Model {
 		$this->db->set('status', 0); 
 		$this->db->where('id', $id);
 		$this->db->update($this->table);
-		return $this->db->affected_rows();		
+		return $this->db->affected_rows();
 	}
 }
