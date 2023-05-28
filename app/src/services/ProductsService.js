@@ -1,16 +1,16 @@
 const GLOBAL = require("../constant");
 
-class CategoriesService {
+class ProductService {
     constructor(domain) {
-        if (CategoriesService.instance) {
-            return CategoriesService.instance;
+        if (ProductService.instance) {
+            return ProductService.instance;
         }
         this.domain = domain || GLOBAL.BASE_URL;
         this.baseHeaders = {
             origin: ["*"],
             authorization: JSON.parse(localStorage.getItem("token")),
         };
-        CategoriesService.instance = this;
+        ProductService.instance = this;
     }
 
     async request(url, options) {
@@ -25,79 +25,79 @@ class CategoriesService {
         }
     }
 
-    async getAllCategories() {
+    async getAllProducts() {
         const headers = this.baseHeaders;
-        const url = `${this.domain}api/v2/categories/lists`;
+        const url = `${this.domain}api/v2/products/lists`;
         const options = { headers };
 
         try {
             const data = await this.request(url, options);
             return data.data;
         } catch (error) {
-            throw new Error("Failed to fetch categories");
+            throw new Error("Failed to fetch products");
         }
     }
 
-    async getCategoryById(id) {
-        const categories = await this.getAllCategories();
-        return categories.find((category) => category.id === id);
+    async getProductById(id) {
+        const products = await this.getAllProducts();
+        return products.find((product) => product.id === id);
     }
 
-    async addCategory(category) {
+    async addProduct(product) {
         const headers = this.baseHeaders;
-        const url = `${this.domain}api/v2/categories/add`;
+        const url = `${this.domain}api/v2/products/add`;
         const options = {
             method: "POST",
             headers: {
                 ...headers,
             },
             crossDomain: true,
-            body: JSON.stringify(category),
+            body: JSON.stringify(product),
         };
 
         try {
             const data = await this.request(url, options);
             return data.data;
         } catch (error) {
-            throw new Error("Failed to fetch categories");
+            throw new Error("Failed to add product");
         }
     }
 
-    async updateCategory(id, updatedCategory) {
+    async updateProduct(id, updatedProduct) {
         const headers = this.baseHeaders;
-        const url = `${this.domain}api/v2/categories/update`;
+        const url = `${this.domain}api/v2/products/update`;
         const options = {
             method: "POST",
             headers: {
                 ...headers,
             },
             crossDomain: true,
-            body: JSON.stringify({ ...updatedCategory, id }),
+            body: JSON.stringify({ ...updatedProduct, id }),
         };
         try {
             const data = await this.request(url, options);
             return data.data;
         } catch (error) {
-            throw new Error("Failed to fetch categories");
+            throw new Error("Failed to update product");
         }
     }
 
-    async deleteCategory(id) {
+    async deleteProduct(id) {
         const headers = this.baseHeaders;
-        const url = `${this.domain}api/v2/categories/delete/${id}`;
+        const url = `${this.domain}api/v2/products/delete/${id}`;
         const options = { headers };
 
         try {
             const data = await this.request(url, options);
             return data.data;
         } catch (error) {
-            throw new Error("Failed to fetch categories");
+            throw new Error("Failed to delete product");
         }
     }
 }
 
 // Create a single instance of the service
-const categoriesServiceInstance = new CategoriesService();
+const productServiceInstance = new ProductService();
 
 // Export the singleton instance
-export default categoriesServiceInstance;
+export default productServiceInstance;

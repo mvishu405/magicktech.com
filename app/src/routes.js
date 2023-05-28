@@ -115,8 +115,29 @@ const AddUpdateWarrantyOrderForm = Loadable({
     loading: Loading,
 });
 
+/*
+|--------------------------------------------------------------------------
+| Category, Subcategory, Products |----------------------------------------
+|--------------------------------------------------------------------------
+|
+*/
 const ManageCategories = Loadable({
     loader: () => import("./views/ManageCategories/ManageCategories"),
+    loading: Loading,
+});
+
+const AddUpdateCategories = Loadable({
+    loader: () => import("./views/ManageCategories/AddUpdateCategories"),
+    loading: Loading,
+});
+
+const ManageProducts = Loadable({
+    loader: () => import("./views/ManageProducts/ManageProducts"),
+    loading: Loading,
+});
+
+const AddUpdateProducts = Loadable({
+    loader: () => import("./views/ManageProducts/AddUpdateProducts"),
     loading: Loading,
 });
 
@@ -145,9 +166,28 @@ const routes = [
     { path: "/component/edit", name: "Edit Component", component: AddUpdateComponent },
     { path: "/component", name: "Component", component: ManageComponent },
 
-    //   Category, Subcategory, Products
+    /*
+    |--------------------------------------------------------------------------
+    | Category, Subcategory, Products
+    |--------------------------------------------------------------------------
+    | From here I have started my routes
+    |
+    */
 
+    { path: "/categories/add", name: "Add Categories", component: AddUpdateCategories },
+    { path: "/categories/edit", name: "Edit Categories", component: AddUpdateCategories },
     { path: "/categories", name: "Categories", component: ManageCategories },
+
+    { path: "/products/add", name: "Add Products", component: AddUpdateProducts },
+    { path: "/products/edit", name: "Edit Products", component: AddUpdateProducts },
+    { path: "/products", name: "Products", component: ManageProducts },
+
+    /*
+    |--------------------------------------------------------------------------
+    | End of Code |------------------------------------------------------------
+    |--------------------------------------------------------------------------
+    |
+    */
 
     { path: "/codes/add", name: "Add Code", component: AddUpdateCodes },
     { path: "/codes/edit", name: "Edit Code", component: AddUpdateCodes },
