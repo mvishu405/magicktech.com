@@ -11,18 +11,6 @@ class Products_model extends CI_Model {
 		$this->load->database();
 	}
 
-	public function getAllproducts() {
-        // Fetch products from the database
-		$query = $this->db->select('id, name, category_id, status')
-                  ->from('products')
-                  ->get();
-		foreach ($query->result_array() as $rows)
-		{
-			$return[] = (array) $rows;
-		}
-		return $return;
-    }
-
 	function get_lists()
 	{
 		$this->db->select('id, name, category_id, status');

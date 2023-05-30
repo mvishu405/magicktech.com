@@ -13,7 +13,7 @@ class Codes_model extends CI_Model {
 
 	function get_lists()
 	{
-		$this->db->select('id, code, description, width, depth, height, cabinet_type, date_created, data_modified');
+		$this->db->select('id, code, description, width, depth, height, cabinet_type, product_id, date_created, data_modified');
 		$this->db->from($this->table);
 		$this->db->where('status','1');
 		$query = $this->db->get();
@@ -34,7 +34,7 @@ class Codes_model extends CI_Model {
 
 	public function get_by_id($id)
 	{
-		$this->db->select('id, code, description, width, depth, height, cabinet_type');
+		$this->db->select('id, code, description, width, depth, height, cabinet_type, product_id');
 		$this->db->from($this->table);
 		$this->db->where('id',$id);
 		$this->db->where('status', 1);
