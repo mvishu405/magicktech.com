@@ -278,6 +278,16 @@ class DefaultHeader extends Component {
                         ""
                     )}
 
+                    {this.state.user.user_type == "SA" ? (
+                        <NavItem className="px-3">
+                            <Link to="/products" className={pathName == "/products" ? "is-active" : ""}>
+                                Products
+                            </Link>
+                        </NavItem>
+                    ) : (
+                        ""
+                    )}
+
                     {/* End Route */}
 
                     {this.state.user.user_type == "SA" ? (

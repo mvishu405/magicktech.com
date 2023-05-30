@@ -6,41 +6,53 @@ import "react-table/react-table.css";
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
 
-import categoriesServiceInstance from "../../services/CategoriesService";
+import ProductService from "../../services/ProductsService";
+import CategoryService from "../../services/CategoriesService";
 
-class ManageCategories extends Component {
+class ManageProducts extends Component {
     constructor(props) {
         super(props);
         this.state = {
             loading: true,
             categories: [],
+            products: [],
             user: JSON.parse(localStorage.getItem("userData")),
         };
-        this.categoriesService = categoriesServiceInstance;
+        this.productService = ProductService;
+        this.categoryService = CategoryService;
     }
 
     async componentDidMount() {
-        await this.fetchCategories();
+        await Promise.all([this.fetchCategories(), this.fetchProducts()]);
     }
 
     async fetchCategories() {
         try {
-            const categories = await this.categoriesService.getAllCategories();
+            const categories = await this.categoryService.getAllCategories();
             this.setState({ categories, loading: false });
         } catch (error) {
             console.log("Error fetching categories:", error);
         }
     }
 
-    handleDeleteCategory(id) {
+    async fetchProducts() {
+        try {
+            const products = await this.productService.getAllProducts();
+            this.setState({ products, loading: false });
+        } catch (error) {
+            console.log("Error fetching products:", error);
+        }
+    }
+
+    handleDeleteProduct(id) {
         confirmAlert({
             title: "Confirm Delete",
-            message: "Are you sure you want to delete this category?",
+            message: "Are you sure you want to delete this product?",
             buttons: [
                 {
                     label: "Yes",
                     onClick: () => {
-                        this.deleteCategory(id);
+                        this.deleteProduct(id);
                     },
                 },
                 {
@@ -53,15 +65,27 @@ class ManageCategories extends Component {
         });
     }
 
-    async deleteCategory(id) {
+    async deleteProduct(id) {
         try {
-            // Implement the delete category logic here
-            await this.categoriesService.deleteCategory(id);
-            await this.fetchCategories();
-            console.log("Delete category with id:", id);
+            await this.productService.deleteProduct(id);
+            await this.fetchProducts();
+            console.log("Delete product with id:", id);
         } catch (error) {
-            console.log("Error deleting category:", error);
+            console.log("Error deleting product:", error);
         }
+    }
+
+    renderCategoryName(category, categories) {
+        if (category) {
+            let categoryName = category.name;
+            let parentCategory = categories.find((cat) => cat.id === category.parent_id);
+            while (parentCategory) {
+                categoryName = parentCategory.name + " => " + categoryName;
+                parentCategory = categories.find((cat) => cat.id === parentCategory.parent_id);
+            }
+            return categoryName;
+        }
+        return "";
     }
 
     render() {
@@ -69,7 +93,7 @@ class ManageCategories extends Component {
             return <Redirect to={"/customers"} />;
         }
 
-        const { categories, loading } = this.state;
+        const { products, loading, categories } = this.state;
 
         const columns = [
             {
@@ -86,28 +110,11 @@ class ManageCategories extends Component {
                 accessor: "name",
             },
             {
-                Header: "Parent Category Id",
-                id: "parent-category-id",
-                accessor: "parent_id",
-            },
-            {
-                Header: "Parent Category",
-                id: "parent-category",
-                accessor: "parent_id",
-                filterMethod: (filter, row) => {
-                    const parentCategory = categories.find((category) => category.id === row._original.parent_id);
-                    return parentCategory && parentCategory.name.toLowerCase().includes(filter.value.toLowerCase());
-                },
-                Filter: ({ filter, onChange }) => (
-                    <input
-                        value={filter ? filter.value : ""}
-                        onChange={(event) => onChange(event.target.value)}
-                        style={{ width: "100%" }}
-                    />
-                ),
-                Cell: ({ row }) => {
-                    const parentCategory = categories.find((category) => category.id === row._original.parent_id);
-                    return parentCategory ? parentCategory.name : "";
+                Header: "Category",
+                id: "category",
+                accessor: (d) => {
+                    const category = categories.find((cat) => cat.id === d.category_id);
+                    return this.renderCategoryName(category, categories);
                 },
             },
             {
@@ -119,16 +126,13 @@ class ManageCategories extends Component {
                 accessor: (d) => (
                     <span>
                         <Link
-                            to={"/categories/edit/?type=edit&id=" + d.id}
+                            to={"/products/edit/?type=edit&id=" + d.id}
                             className="btn btn-ghost-info mr10 action_btn"
                         >
                             <i className="fa fa-edit" title="Edit" />
                         </Link>
-                        <div
-                            onClick={() => this.handleDeleteCategory(d.id)}
-                            className="btn btn-ghost-danger action_btn"
-                        >
-                            <Link to={"/categories/" + d.id} title="Delete" className="color_red">
+                        <div onClick={() => this.handleDeleteProduct(d.id)} className="btn btn-ghost-danger action_btn">
+                            <Link to={"/products/" + d.id} title="Delete" className="color_red">
                                 <i className="fa fa-trash" />
                             </Link>
                         </div>
@@ -143,17 +147,17 @@ class ManageCategories extends Component {
                     <Col xs="12" lg="12">
                         <Card>
                             <CardHeader>
-                                <i className="fa fa-align-justify" /> Categories List
-                                <Link to="/categories/add">
+                                <i className="fa fa-align-justify" /> Products List
+                                <Link to="/products/add">
                                     <Button outline color="primary" className="float-right">
-                                        Add Categories
+                                        Add Products
                                     </Button>
                                 </Link>
                             </CardHeader>
                             <CardBody>
                                 <ReactTable
                                     columns={columns}
-                                    data={categories}
+                                    data={products}
                                     loading={loading}
                                     filterable
                                     defaultPageSize={10}
@@ -170,4 +174,4 @@ class ManageCategories extends Component {
     }
 }
 
-export default ManageCategories;
+export default ManageProducts;
