@@ -42,7 +42,8 @@ class Codes extends CI_Controller {
 			'width' => $inputs['width'],
 			'depth' => $inputs['depth'],
 			'height' => $inputs['height'],
-			'cabinet_type' => $inputs['cabinet_type']
+			'cabinet_type' => $inputs['cabinet_type'],
+			'product_id' => $inputs['product_id']
 		);
 		$result = $this->codes_model->add($data);
 
@@ -83,7 +84,8 @@ class Codes extends CI_Controller {
 			'width' => $inputs['width'],
 			'depth' => $inputs['depth'],
 			'height' => $inputs['height'],
-			'cabinet_type' => $inputs['cabinet_type']
+			'cabinet_type' => $inputs['cabinet_type'],
+			'product_id' => $inputs['product_id']
 		);
 
 		if($data){
@@ -136,7 +138,13 @@ class Codes extends CI_Controller {
 		{
 			$return['success'] = FALSE;
 			$return['err']['cabinet_type'] = 'Cabinet type is required';
-		}		
+		}
+
+		if($inputs['product_id'] == '')
+		{
+			$return['success'] = FALSE;
+			$return['err']['product_id'] = 'Product is required';
+		}
 						
 		if($return['success'] === FALSE)
 		{

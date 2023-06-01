@@ -149,7 +149,6 @@ class Categories extends CI_Controller {
 		$data = array(
 			'name' => $inputs['name'],
 			'parent_id' => $inputs['parent_id'],
-			'status' => $inputs['status'],
 		);
 
 		if($data){

@@ -7,45 +7,11 @@ class Products extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+		$this->load->model('Products_model');
 		$this->load->model('login_model');
 		$this->load->helper('form');
 	}
-
-    public function getAllProducts() {
-		$this->login_model->checktoken();
-        $results = $this->Products_model->getAllProducts();
-		foreach($results as $result) {
-			$new[] = $result;
-		}
-
-		if($result == false) {
-			$return['success'] = false;
-			$return['msg'] = "Failed to load a data!.";
-		}else {
-			$return['success'] = true;
-			$return['msg'] = "Data loaded successfully";
-			$return['data'] = $new;
-		}
-		echo json_encode($return);
-    }
-
-    public function getProductCodes($productId) {
-		$this->login_model->checktoken();
-        $results = $this->Products_model->getProductCodes($productId);
-		foreach($results as $result) {
-			$new[] = $result;
-		}
-		if($result == false) {
-			$return['success'] = false;
-			$return['msg'] = "Failed to load a data!.";
-		}else {
-			$return['success'] = true;
-			$return['msg'] = "Data loaded successfully";
-			$return['data'] = $new;
-		}
-		echo json_encode($return);
-    }
-
+	
 	public function lists()
 	{		
 		$this->login_model->checktoken();
@@ -69,13 +35,14 @@ class Products extends CI_Controller {
 	{
 		global $inputs;	
 		$this->login_model->checktoken();
-		$this->_validate();		
+		$this->_validate();
 		$data = array(
 			'name' => $inputs['name'],
 			'category_id' => $inputs['category_id'],
 		);
-		$result = $this->Products_model->add($data);
 
+		$result = $this->Products_model->add($data);
+		
 		if($result == true){
 			$return['success'] = true;
 			$return['msg'] = "Data added successfully";
@@ -110,7 +77,6 @@ class Products extends CI_Controller {
 		$data = array(
 			'name' => $inputs['name'],
 			'category_id' => $inputs['category_id'],
-			'status' => $inputs['status'],
 		);
 
 		if($data){
@@ -127,6 +93,7 @@ class Products extends CI_Controller {
 
 	public function delete($id)
 	{
+		//update the related category_id status to 0
 		$this->login_model->checktoken();
 		$result = $this->Products_model->delete($id);
 		if($result == true){
@@ -153,10 +120,11 @@ class Products extends CI_Controller {
 			$return['success'] = FALSE;
 			$return['err']['name'] = 'Name is required';
 		}
+
 		if($inputs['category_id'] == '')
 		{
 			$return['success'] = FALSE;
-			$return['err']['category_id'] = 'Category is required';
+			$return['err']['category_id'] = 'Parent Category is required';
 		}
 	}
 }
