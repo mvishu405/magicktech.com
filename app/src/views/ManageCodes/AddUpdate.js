@@ -36,26 +36,27 @@ class AddUpdate extends Component {
         this.productService = ProductService;
     }
 
-    async componentDidMount() {
+    componentDidMount() {
         this.rtype = qs.parse(this.props.location.search).type || "add";
         this.id = qs.parse(this.props.location.search).id || 0;
 
         if (this.rtype === "edit") {
             this.input_disabled = "true";
-            let result = await this.users.get(this.id);
-            result = result.data;
-            this.setState({
-                code: result.code,
-                description: result.description,
-                width: result.width,
-                depth: result.depth,
-                height: result.height,
-                cabinet_type: result.cabinet_type,
+            this.users.get(this.id).then((result) => {
+                result = result.data;
+                this.setState({
+                    code: result.code,
+                    description: result.description,
+                    width: result.width,
+                    depth: result.depth,
+                    height: result.height,
+                    cabinet_type: result.cabinet_type,
+                    product: result.product_id ? result.product_id : null,
+                });
             });
         }
-
         // Fetch all products
-        await this.fetchProducts();
+        this.fetchProducts();
     }
 
     async fetchProducts() {
@@ -85,7 +86,8 @@ class AddUpdate extends Component {
                     this.state.width,
                     this.state.depth,
                     this.state.height,
-                    this.state.cabinet_type
+                    this.state.cabinet_type,
+                    this.state.product
                 )
                 .then((res) => {
                     if (res.success == false) {
@@ -155,6 +157,8 @@ class AddUpdate extends Component {
         console.log(`64565464565464554654`, default_type_opt);
 
         const { products } = this.state; // Get the list of products
+
+        console.log(`PRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR`, this.state.product);
 
         return (
             <div className="animated fadeIn">

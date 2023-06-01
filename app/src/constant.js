@@ -1,7 +1,7 @@
 module.exports = {
-    //   BASE_URL: 'https://quote.magickwoods.in/',
+    // BASE_URL: "https://quote.magickwoods.in/",
     // BASE_URL: "http://localhost/",
-    BASE_URL: "https://hokaj.localto.net/magicktech.com/",
+    BASE_URL: "https://real-rings-like.loca.lt/magicktech.com/",
     ACC_DISCOUNT: 20,
     CAB_DISCOUNT: 40,
     ATHOME_DISCOUNT: 20,

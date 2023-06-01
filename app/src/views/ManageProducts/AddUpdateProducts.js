@@ -18,15 +18,15 @@ class AddUpdateProducts extends Component {
         this.categoryService = CategoryService;
     }
 
-    async componentDidMount() {
-        await this.fetchCategories();
+    componentDidMount() {
+        this.fetchCategories();
 
         const queryParams = new URLSearchParams(this.props.location.search);
         const type = queryParams.get("type");
         const id = queryParams.get("id");
 
         if (type === "edit" && id) {
-            await this.fetchProduct(id);
+            this.fetchProduct(id);
         }
     }
 

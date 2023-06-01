@@ -15,15 +15,15 @@ class AddUpdateCategories extends Component {
         this.categoriesService = CategoriesService;
     }
 
-    async componentDidMount() {
+    componentDidMount() {
         const queryParams = new URLSearchParams(this.props.location.search);
         const type = queryParams.get("type");
         const id = queryParams.get("id");
 
         if (type === "edit" && id) {
-            await this.fetchCategory(id);
+            this.fetchCategory(id);
         } else {
-            await this.fetchParentCategories();
+            this.fetchParentCategories();
         }
     }
 

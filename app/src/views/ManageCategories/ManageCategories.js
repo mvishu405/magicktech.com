@@ -19,8 +19,8 @@ class ManageCategories extends Component {
         this.categoriesService = categoriesServiceInstance;
     }
 
-    async componentDidMount() {
-        await this.fetchCategories();
+    componentDidMount() {
+        this.fetchCategories();
     }
 
     async fetchCategories() {

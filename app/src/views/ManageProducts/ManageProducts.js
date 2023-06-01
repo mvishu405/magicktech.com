@@ -22,8 +22,8 @@ class ManageProducts extends Component {
         this.categoryService = CategoryService;
     }
 
-    async componentDidMount() {
-        await Promise.all([this.fetchCategories(), this.fetchProducts()]);
+    componentDidMount() {
+        Promise.all([this.fetchCategories(), this.fetchProducts()]);
     }
 
     async fetchCategories() {
