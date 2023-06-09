@@ -1,7 +1,7 @@
 module.exports = {
     // BASE_URL: "https://quote.magickwoods.in/",
-    // BASE_URL: "http://localhost/",
-    BASE_URL: "https://dull-pillows-stand.loca.lt/magicktech.com/",
+    BASE_URL: "http://localhost/",
+    // BASE_URL: "https://dull-pillows-stand.loca.lt/magicktech.com/",
     ACC_DISCOUNT: 20,
     CAB_DISCOUNT: 40,
     ATHOME_DISCOUNT: 20,
