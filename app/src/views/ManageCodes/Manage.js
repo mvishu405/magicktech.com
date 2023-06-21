@@ -28,7 +28,7 @@ class Manage extends Component {
         this.loadList = this.loadList.bind(this);
     }
 
-    async componentDidMount() {
+    async componentWillMount() {
         await this.loadList();
     }
     async loadList() {
@@ -93,7 +93,7 @@ class Manage extends Component {
                 pages: Math.ceil(filteredData.length / pageSize),
             };
 
-            setTimeout(() => resolve(res), 300);
+            setTimeout(() => resolve(res), 3000);
         });
     }
 

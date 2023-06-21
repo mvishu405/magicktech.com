@@ -144,8 +144,10 @@ const AddUpdateProducts = Loadable({
 const routes = [
     //{ path: '/', exact: true, name: 'Home', component: DefaultLayout },
     { path: "/dashboard", name: "Dashboard", component: Dashboard },
+
     { path: "/quotelist", name: "Quote List", component: Quotelist },
     { path: "/Addquotelineitem", name: "Add Quote Item", component: Addquotelineitem },
+
     { path: "/logout", name: "Logout", component: Logout },
     { path: "/dealers/add", name: "Add Dealer", component: AddUpdateDealers },
     { path: "/dealers/edit", name: "Edit Dealer", component: AddUpdateDealers },
