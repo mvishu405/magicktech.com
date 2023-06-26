@@ -90,8 +90,7 @@ export default class Addquotelineitem extends Component {
     }
 
     async getCodeList() {
-        const codes = await this.CodesService.list();
-        this.setState({ codeList: codes.data });
+        return await this.CodesService.list();
     }
 
     handleCategoryChange(categoryId, quoteLineItemsId) {
@@ -112,6 +111,18 @@ export default class Addquotelineitem extends Component {
         const products = await this.getProductList();
         this.setState({ loading: false });
         this.setState({ productList: products.filter((c) => c.category_id === subCategoryId) });
+    }
+
+    async handleProductChange(productId, quoteLineItemsId) {
+        const quoteData = { ...this.state.quoteFormData };
+        const quoteLineItem = quoteData.quoteLineItems.find((x) => x.id === quoteLineItemsId);
+        quoteLineItem.productId = productId;
+        this.setState(quoteData);
+
+        this.setState({ loading: true });
+        const codes = await this.getCodeList();
+        this.setState({ loading: false });
+        this.setState({ codeList: codes.data.filter((c) => c.product_id === productId) });
     }
 
     render() {
@@ -145,8 +156,15 @@ export default class Addquotelineitem extends Component {
                         // filterText={this.state.filterText}
                         // hide_model={this.state.hide_model}
 
+                        /**
+                         * Event handler
+                         */
                         onCategoryChange={this.handleCategoryChange.bind(this)}
                         onSubCategoryChange={this.handleSubCategoryChange.bind(this)}
+                        onProductChange={this.handleProductChange.bind(this)}
+                        /**
+                         * Data
+                         */
                         categories={this.state.categoryList}
                         subCategories={this.state.subCategoryList}
                         products={this.state.productList}

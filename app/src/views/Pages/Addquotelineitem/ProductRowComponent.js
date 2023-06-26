@@ -41,16 +41,20 @@ export default class ProductRow extends React.Component {
                 </td>
                 <EditableCellCategory
                     categories={this.props.categories}
-                    onCategoryChange={this.props.onCategoryChange}
                     quoteLineItem={this.props.quoteLineItem}
+                    onCategoryChange={this.props.onCategoryChange}
                 />
                 <EditableCellSubCategory
                     subCategories={this.props.subCategories}
                     quoteLineItem={this.props.quoteLineItem}
                     onSubCategoryChange={this.props.onSubCategoryChange}
                 />
-                <EditableCellProduct products={this.props.products} quoteLineItem={this.props.quoteLineItem} />
-                <td />
+                <EditableCellProduct
+                    products={this.props.products}
+                    quoteLineItem={this.props.quoteLineItem}
+                    onProductChange={this.props.onProductChange}
+                />
+                <EditableCellCode codes={this.props.codes} quoteLineItem={this.props.quoteLineItem} />
                 <td />
                 <td />
                 <td />
@@ -70,6 +74,7 @@ class EditableCellCategory extends React.Component {
         return (
             <td className="category">
                 <select
+                    className="form-control wa"
                     onChange={(e) => {
                         this.props.onCategoryChange(e.target.value, this.props.quoteLineItem.id);
                     }}
@@ -91,6 +96,7 @@ class EditableCellSubCategory extends React.Component {
         return (
             <td className="subCategory">
                 <select
+                    className="form-control wa"
                     onChange={(e) => {
                         this.props.onSubCategoryChange(e.target.value, this.props.quoteLineItem.id);
                     }}
@@ -111,11 +117,33 @@ class EditableCellProduct extends React.Component {
     render() {
         return (
             <td className="products">
-                <select>
+                <select
+                    className="form-control wa"
+                    onChange={(e) => {
+                        this.props.onProductChange(e.target.value, this.props.quoteLineItem.id);
+                    }}
+                >
                     <option value="">Select Products...</option>
                     {this.props.products.map((x) => (
                         <option value={x.id} key={x.id}>
                             {x.name}
+                        </option>
+                    ))}
+                </select>
+            </td>
+        );
+    }
+}
+
+class EditableCellCode extends React.Component {
+    render() {
+        return (
+            <td className="codes">
+                <select className="form-control wa">
+                    <option value="">Select Codes...</option>
+                    {this.props.codes.map((x) => (
+                        <option value={x.id} key={x.id}>
+                            {x.description}
                         </option>
                     ))}
                 </select>
@@ -178,76 +206,76 @@ class EditableCellType extends React.Component {
         );
     }
 }
-class EditableCellCode extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            selectedOption: this.props.cellData.value,
-            getOption: [],
-            getCodes: [],
-        };
-    }
+// class EditableCellCode extends React.Component {
+//     constructor(props) {
+//         super(props);
+//         this.state = {
+//             selectedOption: this.props.cellData.value,
+//             getOption: [],
+//             getCodes: [],
+//         };
+//     }
 
-    handleChange = (selectedOption) => {
-        if (selectedOption != null) {
-            this.setState({ selectedOption });
-            var array = {
-                id: this.props.cellData.id,
-                name: this.props.cellData.type,
-                value: selectedOption.value,
-            };
-            var arr = { target: array };
-            this.props.onProductTableUpdate(arr);
-        } else {
-            this.setState({ selectedOption: "Sealect.." });
-        }
-    };
+//     handleChange = (selectedOption) => {
+//         if (selectedOption != null) {
+//             this.setState({ selectedOption });
+//             var array = {
+//                 id: this.props.cellData.id,
+//                 name: this.props.cellData.type,
+//                 value: selectedOption.value,
+//             };
+//             var arr = { target: array };
+//             this.props.onProductTableUpdate(arr);
+//         } else {
+//             this.setState({ selectedOption: "Sealect.." });
+//         }
+//     };
 
-    componentWillReceiveProps(nextProps) {
-        this.setState({ getCodes: this.props.codes });
-    }
+//     componentWillReceiveProps(nextProps) {
+//         this.setState({ getCodes: this.props.codes });
+//     }
 
-    render() {
-        let filter_code = this.props.codes.filter((type) => {
-            if (this.props.type == "Others") {
-                return type.cabinet_type != "Base" && type.cabinet_type != "Wall" && type.cabinet_type != "Tall";
-            } else {
-                return type.cabinet_type == this.props.type;
-            }
-        });
+//     render() {
+//         let filter_code = this.props.codes.filter((type) => {
+//             if (this.props.type == "Others") {
+//                 return type.cabinet_type != "Base" && type.cabinet_type != "Wall" && type.cabinet_type != "Tall";
+//             } else {
+//                 return type.cabinet_type == this.props.type;
+//             }
+//         });
 
-        let codes = [];
-        filter_code.forEach(function(res, key) {
-            var array = {
-                value: res.id,
-                label: res.code + "-" + res.description,
-            };
-            codes[res.id] = array;
-        });
+//         let codes = [];
+//         filter_code.forEach(function(res, key) {
+//             var array = {
+//                 value: res.id,
+//                 label: res.code + "-" + res.description,
+//             };
+//             codes[res.id] = array;
+//         });
 
-        let defaultValue = "";
-        if (codes.length > 0 && codes != undefined && codes != null) {
-            if (codes[this.props.cellData.value] != undefined) {
-                defaultValue = codes[this.props.cellData.value];
-            }
-        }
+//         let defaultValue = "";
+//         if (codes.length > 0 && codes != undefined && codes != null) {
+//             if (codes[this.props.cellData.value] != undefined) {
+//                 defaultValue = codes[this.props.cellData.value];
+//             }
+//         }
 
-        return (
-            <td className="select-up" width={this.props.cellData.width}>
-                <Select
-                    backspaceRemoves
-                    isClearable
-                    className="menu-outer-top"
-                    name={this.props.cellData.type}
-                    id={this.props.cellData.id}
-                    value={defaultValue}
-                    onChange={this.handleChange}
-                    options={codes}
-                />
-            </td>
-        );
-    }
-}
+//         return (
+//             <td className="select-up" width={this.props.cellData.width}>
+//                 <Select
+//                     backspaceRemoves
+//                     isClearable
+//                     className="menu-outer-top"
+//                     name={this.props.cellData.type}
+//                     id={this.props.cellData.id}
+//                     value={defaultValue}
+//                     onChange={this.handleChange}
+//                     options={codes}
+//                 />
+//             </td>
+//         );
+//     }
+// }
 class EditableCellAcc extends React.Component {
     constructor(props) {
         super(props);

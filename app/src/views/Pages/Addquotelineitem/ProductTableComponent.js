@@ -25,12 +25,20 @@ export default class ProductTable extends React.Component {
                     // product={product}
                     // onDelEvent={rowDel.bind(this)}
                     // onCloneEvent={rowClone.bind(this)}
-                    quoteLineItem={quoteLineItem}
+                    /**
+                     * Events
+                     */
                     onCategoryChange={this.props.onCategoryChange}
                     onSubCategoryChange={this.props.onSubCategoryChange}
+                    onProductChange={this.props.onProductChange}
+                    /**
+                     * Data
+                     */
+                    quoteLineItem={quoteLineItem}
                     categories={this.props.categories}
                     subCategories={this.props.subCategories}
                     products={this.props.products}
+                    codes={this.props.codes}
                     key={quoteLineItem.id}
                     sno={sno++}
                 />
@@ -56,7 +64,9 @@ export default class ProductTable extends React.Component {
                             <th>Drawers</th>
                             <th>Handles</th>
                             <th>Flap Up</th>
+                            
                             <th>Qty</th>
+                            
                             <th className="text-center" title="Accessories / Clone / Delete">
                                 A / C / D
                             </th>
