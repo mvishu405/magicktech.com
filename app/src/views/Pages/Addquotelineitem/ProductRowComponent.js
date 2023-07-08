@@ -36,9 +36,7 @@ export default class ProductRow extends React.Component {
     render() {
         return (
             <tr className="text-center">
-                <td className="del-cell" width="5%">
-                    {this.props.sno}
-                </td>
+                <td className="del-cell">{this.props.sno}</td>
                 <EditableCellCategory
                     categories={this.props.categories}
                     quoteLineItem={this.props.quoteLineItem}
@@ -55,14 +53,106 @@ export default class ProductRow extends React.Component {
                     onProductChange={this.props.onProductChange}
                 />
                 <EditableCellCode codes={this.props.codes} quoteLineItem={this.props.quoteLineItem} />
-                <td />
-                <td />
-                <td />
-                <td />
-                <td />
-                <td />
-                <td />
-                <td />
+
+                {/* Carcass */}
+                <td>
+                    <select className="form-control">
+                        <option value="" key="">
+                            Select...
+                        </option>
+                        <option value="1" key="">
+                            Carcass Cost (Particle Board)
+                        </option>
+                        <option value="2" key="">
+                            Carcass Cost (MDF)
+                        </option>
+                    </select>
+                </td>
+
+                {/* Shutter */}
+                <td>
+                    <select className="form-control">
+                        <option value="" key="">
+                            Select...
+                        </option>
+                        <option value="1" key="">
+                            MDF SS Matt paint
+                        </option>
+                        <option value="2" key="">
+                            Plywood SS Matt Laminated
+                        </option>
+                    </select>
+                </td>
+
+                {/* Hinges */}
+                <td>
+                    <select className="form-control">
+                        <option value="" key="">
+                            Select...
+                        </option>
+                        <option value="1" key="">
+                            Hettich Regular
+                        </option>
+                        <option value="2" key="">
+                            Hettich Soft Close
+                        </option>
+                    </select>
+                </td>
+
+                {/* Drawers */}
+                <td>
+                    <select className="form-control">
+                        <option value="" key="">
+                            Select...
+                        </option>
+                        <option value="1" key="">
+                            Regular Price
+                        </option>
+                        <option value="2" key="">
+                            Soft Close Price
+                        </option>
+                    </select>
+                </td>
+
+                {/* Handles */}
+                <td>
+                    <select className="form-control">
+                        <option value="" key="">
+                            Select...
+                        </option>
+                        <option value="1" key="">
+                            Handle 7
+                        </option>
+                        <option value="2" key="">
+                            Handle 1
+                        </option>
+                        <option value="3" key="">
+                            Handle 2
+                        </option>
+                    </select>
+                </td>
+
+                {/* Flap up */}
+                <td>
+                    <select className="form-control">
+                        <option value="" key="">
+                            Select...
+                        </option>
+                        <option value="1" key="">
+                            Regular lift up
+                        </option>
+                        <option value="2" key="">
+                            BLUM HK lift up
+                        </option>
+                    </select>
+                </td>
+
+                {/* Quantity */}
+                <td>
+                    <input type="text" className="form-control" value="1" />
+                </td>
+
+                {/* Actions */}
                 <td />
             </tr>
         );
@@ -445,7 +535,6 @@ class EditableCell extends React.Component {
         return (
             <td width={this.props.cellData.width}>
                 <select
-                    type="select"
                     type="select"
                     className="form-control wa"
                     name={this.props.cellData.type}

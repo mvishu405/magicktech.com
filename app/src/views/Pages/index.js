@@ -1,6 +1,4 @@
-import Addquotelineitem from './Addquotelineitem';
-import Quotelist from './Quotelist';
+import Addquotelineitem from "./Addquotelineitem";
+import Quotelist from "./Quotelist";
 
-export {
-  Quotelist, Addquotelineitem
-};
+export { Quotelist, Addquotelineitem };

@@ -125,14 +125,6 @@ export default class Addquotelineitem extends Component {
         this.setState({ codeList: codes.data.filter((c) => c.product_id === productId) });
     }
 
-    handleAddEvent() {
-        const quoteData = { ...this.state.quoteFormData };
-        quoteData.quoteLineItems.push({
-            id: 2,
-        });
-        this.setState({ quoteFormData: quoteData });
-    }
-
     render() {
         const { get_customer_details, loading } = this.state;
 
@@ -146,11 +138,6 @@ export default class Addquotelineitem extends Component {
                         type="submit"
                         value="Create Quote"
                         className="px-4 btn btn-primary colorwhite submit_quote_btn mr10"
-                        onClick={() => {
-                            setTimeout(() => {
-                                alert("Quote Data created successfully");
-                            }, 1000);
-                        }}
                     />
                 </div>
 
@@ -158,7 +145,17 @@ export default class Addquotelineitem extends Component {
 
                 <div>
                     <ProductTable
-                        onRowAdd={this.handleAddEvent.bind(this)}
+                        // onProductTableUpdate={this.handleProductTable.bind(this)}
+                        // onRowAdd={this.handleAddEvent.bind(this)}
+                        // onRowDel={this.handleRowDel.bind(this)}
+                        // onRowClone={this.handleRowClone.bind(this)}
+                        // products={this.state.line_item_options}
+                        // accessories={this.state.get_accessories}
+                        // components={this.state.select_components_option}
+                        // codes={this.state.select_codes_option}
+                        // filterText={this.state.filterText}
+                        // hide_model={this.state.hide_model}
+
                         /**
                          * Event handler
                          */

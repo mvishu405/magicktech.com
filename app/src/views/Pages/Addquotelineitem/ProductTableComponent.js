@@ -50,7 +50,7 @@ export default class ProductTable extends React.Component {
                 <button type="button" onClick={this.props.onRowAdd} className="btn btn-success pull-right px-4 wa">
                     Add Cabinet
                 </button>
-                <Table hover className="table-outline mb-0 d-none d-sm-table bg_white quote_table">
+                <Table border="2" hover className="table-outline mb-0 d-none d-sm-table bg_white quote_table">
                     <thead className="thead-light">
                         <tr>
                             <th>S.No</th>
@@ -64,9 +64,9 @@ export default class ProductTable extends React.Component {
                             <th>Drawers</th>
                             <th>Handles</th>
                             <th>Flap Up</th>
-                            
+
                             <th>Qty</th>
-                            
+
                             <th className="text-center" title="Accessories / Clone / Delete">
                                 A / C / D
                             </th>
