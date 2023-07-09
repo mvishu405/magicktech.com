@@ -36,22 +36,31 @@ export default class ProductRow extends React.Component {
     render() {
         return (
             <tr className="text-center">
+                {/* Serial Number */}
                 <td className="del-cell">{this.props.sno}</td>
+
+                {/* Parent Categories */}
                 <EditableCellCategory
                     categories={this.props.categories}
                     quoteLineItem={this.props.quoteLineItem}
                     onCategoryChange={this.props.onCategoryChange}
                 />
+
+                {/* Sub Categories */}
                 <EditableCellSubCategory
                     subCategories={this.props.subCategories}
                     quoteLineItem={this.props.quoteLineItem}
                     onSubCategoryChange={this.props.onSubCategoryChange}
                 />
+
+                {/* Products */}
                 <EditableCellProduct
                     products={this.props.products}
                     quoteLineItem={this.props.quoteLineItem}
                     onProductChange={this.props.onProductChange}
                 />
+
+                {/* Codes */}
                 <EditableCellCode codes={this.props.codes} quoteLineItem={this.props.quoteLineItem} />
 
                 {/* Carcass */}

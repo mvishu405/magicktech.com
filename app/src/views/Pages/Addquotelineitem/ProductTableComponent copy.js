@@ -4,7 +4,17 @@ import ProductRow from "./ProductRowComponent";
 
 export default class ProductTable extends React.Component {
     render() {
+        var accessories = this.props.accessories;
+        var components = this.props.components;
+        var codes = this.props.codes;
+        var hide_model = this.props.hide_model;
+        var onProductTableUpdate = this.props.onProductTableUpdate;
+        var rowDel = this.props.onRowDel;
+        var rowClone = this.props.onRowClone;
+        var filterText = this.props.filterText;
+
         var sno = 1;
+        const quoteFormData = this.props.quoteFormData;
         const quoteLineItems = quoteFormData.quoteLineItems.map((quoteLineItem) => {
             return (
                 <ProductRow
