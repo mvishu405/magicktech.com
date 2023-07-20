@@ -82,16 +82,39 @@ class Quotes_model extends CI_Model {
 
 	public function get_quote_line_items($quote_id)
 	{	
-		$this->db->select_sum('quantity', 'sum_quantity');
-		$this->db->select('cabinet_type_id, quote_id, code_id, cabinet_carcass_id, cabinet_shutter_id, drawers_id, hinges_id, handles_id, flap_up_id, accessories, type, other_service_name, other_service_price');
-		$this->db->group_by(array('code_id', 'cabinet_carcass_id', 'cabinet_shutter_id', 'drawers_id', 'hinges_id', 'handles_id', 'flap_up_id')); 
-		$this->db->where('quote_id',$quote_id);
-		$this->db->where('type','C');
-		$this->db->where('status', 1);
-		$this->db->from('quote_line_items');
-		$this->db->order_by("id", "asc");
-		$query = $this->db->get();
-		return $query->result_array();
+// 		$this->db->select_sum('quantity', 'sum_quantity');
+// 		$this->db->select('cabinet_type_id, quote_id, code_id, cabinet_carcass_id, cabinet_shutter_id, drawers_id, hinges_id, handles_id, flap_up_id, accessories, type, other_service_name, other_service_price');
+// 		$this->db->group_by(array('code_id', 'cabinet_carcass_id', 'cabinet_shutter_id', 'drawers_id', 'hinges_id', 'handles_id', 'flap_up_id')); 
+// 		$this->db->where('quote_id',$quote_id);
+// 		$this->db->where('type','C');
+// 		$this->db->where('status', 1);
+// 		$this->db->from('quote_line_items');
+// 		$this->db->order_by("id", "asc");
+// 		$query = $this->db->get();
+// 		return $query->result_array();
+
+            $this->db->select('categories.name AS category_name, sub_categories.name AS subcategory_name, products.name AS product_name');
+            $this->db->join('categories', 'categories.id = quote_line_items.category_id', 'left');
+            $this->db->join('categories AS sub_categories', 'sub_categories.id = quote_line_items.sub_category_id', 'left');
+            $this->db->join('products', 'products.id = quote_line_items.product_id', 'left');
+            $this->db->select_sum('quantity', 'sum_quantity');
+            $this->db->select('cabinet_type_id, quote_id, code_id, cabinet_carcass_id, cabinet_shutter_id, drawers_id, hinges_id, handles_id, flap_up_id, accessories, type, other_service_name, other_service_price');
+            $this->db->group_by(array('code_id', 'cabinet_carcass_id', 'cabinet_shutter_id', 'drawers_id', 'hinges_id', 'handles_id', 'flap_up_id'));
+            $this->db->where('quote_id', $quote_id);
+            $this->db->where('quote_line_items.type', 'C'); // Specify the table alias before the column name
+            $this->db->where('quote_line_items.status', 1); // Specify the table alias before the column name
+            $this->db->from('quote_line_items');
+            $this->db->order_by("quote_line_items.id", "asc");
+            $query = $this->db->get();
+
+        // if ($this->db->error()) {
+        //     $error = $this->db->error();
+        //     echo 'Database Error: ' . $error['code'] . ' - ' . $error['message'];
+        //     // or log the error for further investigation
+        //     exit;
+        // }
+        return $query->result_array();
+
 	}
 	public function get_quote_line_items_services($quote_id)
 	{	

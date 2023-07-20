@@ -1,4 +1,6 @@
 <?php
+
+
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 require APPPATH.'/helpers/RequestHeader.php';
@@ -173,5 +175,36 @@ class Customers extends CI_Controller {
 		}
 		
 	}	
+
+	/* Public function to create customers  */
+
+	public function create()
+	{
+		global $inputs;
+		$this->login_model->checktoken();
+		$this->_validate();		
+		$data = array(
+			'name' => $inputs['name'],
+			'email' => $inputs['email'],			
+			'phone' => $inputs['phone'],
+			'alternate_phone' => $inputs['alternate_phone'],
+			'state' => $inputs['state'],
+			'city' => $inputs['city'],
+			'address' => $inputs['address'],
+			'comments' => $inputs['comments'],
+			'lead_source' => $inputs['lead_source'],
+			'dealer_id' => $inputs['dealer_id'],
+			'api_json' =>json_encode(json_decode($inputs['api_json'],true)),
+		);
+
+		$result = $this->customers_model->add($data);
+		$return = array();
+		if($result){
+			$return['success'] = true;
+			$return['msg'] = "Customer added successfully";
+		}
+
+		echo json_encode($return);        
+	}
 
 }

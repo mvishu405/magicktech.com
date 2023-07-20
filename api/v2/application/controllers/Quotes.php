@@ -1,5 +1,6 @@
 <?php
-error_reporting(0);
+// error_reporting(E_ALL);
+// ini_set('display_errors', 1);
 defined('BASEPATH') OR exit('No direct script access allowed');
 require APPPATH.'/helpers/RequestHeader.php';
 
@@ -159,6 +160,9 @@ class Quotes extends CI_Controller {
 				$quote_lines['cabinets'][$key]['handles_id'] = $row['handles_id'];
 				$quote_lines['cabinets'][$key]['hinges_id'] = $row['hinges_id'];
 				$quote_lines['cabinets'][$key]['quantity'] = $row['quantity'];
+				$quote_lines['cabinets'][$key]['parent_category_id'] = $row['category_id'];
+				$quote_lines['cabinets'][$key]['sub_category_id'] = $row['sub_category_id'];
+				$quote_lines['cabinets'][$key]['mproduct_id'] = $row['product_id'];
 				$quote_lines['cabinets'][$key]['id'] = $row['id'];				
 		}
 		foreach($result_quote_lines_service as $key => $row) {
@@ -303,7 +307,8 @@ class Quotes extends CI_Controller {
 		$this->login_model->checktoken();
 		$data = $inputs;
 		
-		 if(count($data['deleted']) > 0 ){
+		 if(isset($data['deleted']) && count($data['deleted']) > 0 ){
+		     $delete_line=[];
 				foreach($data['deleted'] as $id){
 					if($this->get_numeric($id) != 0){
 						$delete_line[] = $this->get_numeric($id);
@@ -325,7 +330,7 @@ class Quotes extends CI_Controller {
 			'quoteforname'=>$data['quoteforname']			  
 		);	
 		
-		if($this->quotes_model->checkDuplicateEntry('quotes', 'quote_id', $data['quote_id']) == true && $data['revision'] == 0){
+		if(isset($data['quote_id']) && $this->quotes_model->checkDuplicateEntry('quotes', 'quote_id', $data['quote_id']) == true && $data['revision'] == 0){
 			$this->quotes_model->update_quotes($data['quote_id'], $quote_data);
 			$quote_id = $data['quote_id'];
 		}else{
@@ -362,7 +367,11 @@ class Quotes extends CI_Controller {
 							'handles_id'         =>$input[$x]['handles_id'],
 							'flap_up_id'         =>$input[$x]['flap_up_id'],
 							'quantity'         =>$input[$x]['quantity'],
-							'accessories'        =>$acc_input					
+							'accessories'        =>$acc_input,
+							'category_id'        =>$input[$x]['parent_category_id'],
+							'product_id'         =>$input[$x]['mproduct_id'],
+							'sub_category_id'         =>$input[$x]['sub_category_id'],
+							
 						);
 					
 						$result = $this->quotes_model->update_quote_line_items($input[$x]['id'], $input_quote_line_items);
@@ -385,7 +394,10 @@ class Quotes extends CI_Controller {
 							'handles_id'         =>$input[$x]['handles_id'],
 							'flap_up_id'         =>$input[$x]['flap_up_id'],
 							'quantity'         =>$input[$x]['quantity'],
-							'accessories'        =>$acc_input					
+							'accessories'        =>$acc_input,
+							'category_id'        =>$input[$x]['parent_category_id'],
+							'product_id'         =>$input[$x]['mproduct_id'],
+							'sub_category_id'         =>$input[$x]['sub_category_id'],
 						);
 						$result = $this->quotes_model->insert_quote_line_items($input_quote_line_items);				
 					}

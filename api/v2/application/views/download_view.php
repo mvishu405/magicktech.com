@@ -190,13 +190,27 @@ a:hover{color:#F6232B;}
 		</tbody>		
 	</table>
     <div class="col-md-12"><hr class="color_orange"></div>
+	<!--<table class="table bordernone pb_before" style="margin-bottom:0;">-->
+	<!--	<tbody>-->
+	<!--		<tr><td><h2 class="title">Kitchen</h2></td></tr>-->
+	<!--		<tr><td class="pb0"><h6 class="leftborder">Cabinet List</h6></td></tr>-->
+	<!--	</tbody>-->
+	<!--</table>-->
+	</div>
+	
+	<?php 
+	foreach($quote_line_categories as $category=>$subcategories)
+	{
+	     foreach ($subcategories as $subcategory=>$html_content) {
+	    
+	    ?>
+
 	<table class="table bordernone pb_before" style="margin-bottom:0;">
 		<tbody>
-			<tr><td><h2 class="title">Kitchen</h2></td></tr>
+			<tr><td><h2 class="title"><?php echo $category." - ".$subcategory ?></h2></td></tr>
 			<tr><td class="pb0"><h6 class="leftborder">Cabinet List</h6></td></tr>
 		</tbody>
 	</table>
-	</div>
 	<div class="row ptb">
 		<div class="col-md-12">
 		<table class="table" style="background:#fff;">
@@ -217,11 +231,21 @@ a:hover{color:#F6232B;}
 		  </tr>
 		</thead>
 		<tbody>
-			<?php echo $cabinet_list; ?>
+		    <?php 
+		     
+		     echo $html_content;
+		  
+		     
+		     ?>
 		</tbody>
 		</table>
 		</div>
 	</div>
+	<?php 
+	     }
+	}
+	
+	?>
 	<div class="row ptb pb_before">
 		<table class="table bordernone" >
 			<tbody>

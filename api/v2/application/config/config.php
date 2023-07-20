@@ -416,13 +416,10 @@ $config['cookie_httponly'] 	= FALSE;
 | Determines whether to standardize newline characters in input data,
 | meaning to replace \r\n, \r, \n occurrences with the PHP_EOL value.
 |
-<<<<<<< HEAD
 | This is particularly useful for portability between UNIX-based OSes,
 | (usually \n) and Windows (\r\n).
-=======
 | WARNING: This feature is DEPRECATED and currently available only
 |          for backwards compatibility purposes!
->>>>>>> e76217041ddcae80f11b50b44a7d409b6722ad40
 |
 */
 $config['standardize_newlines'] = FALSE;
@@ -528,3 +525,4 @@ $config['rewrite_short_tags'] = FALSE;
 | Array:		array('10.0.1.200', '192.168.5.0/24')
 */
 $config['proxy_ips'] = '';
+$config['encryption_key'] = 'R@nD0mEnCryPt10nK3yf0rC1';
