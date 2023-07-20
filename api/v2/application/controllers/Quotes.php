@@ -147,7 +147,6 @@ class Quotes extends CI_Controller
         return $return;
     }
 
-<<<<<<< HEAD
 	public function quote_line_items($quote_id)
 	{
 		return $this->quotes_model->get_quote_line_items($quote_id);	
@@ -187,32 +186,12 @@ class Quotes extends CI_Controller
 		$result['dealer_details'] = $dealer_details;
 		$result['quote_deatails'] = $result_quote_deatails;
 		$result['quote_lines'] = $quote_lines;
-=======
-    public function get($id)
-    {
-        $this->login_model->checktoken();
-        $result = $this->quotes_model->get_by_id($id);
-        if ($result == false)
-        {
-            $return['success'] = false;
-            $return['msg']     = 'Data not found!';
-        }
-        else
-        {
-            $return['success'] = true;
-            $return['msg']     = 'Data found!';
-            $return['data']    = $result;
-        }
-        echo json_encode($return);
-    }
->>>>>>> 47b0e9db1957bfea371b5b2a1c47875fba2d9c92
 
     public function quote_line_items($quote_id)
     {
         return $this->quotes_model->get_quote_line_items($quote_id);
     }
 
-<<<<<<< HEAD
 	public function other_services($quote_id,$other_services){
 		if($other_services != null){
 			for($i=0;$i<count($other_services);$i++){
@@ -335,15 +314,6 @@ class Quotes extends CI_Controller
 				}else{
 					$return['error'] = 'Empty row item not inserted';
 				}
-=======
-    public function get_quote_line_items()
-    {
-        global $inputs;
-        $this->login_model->checktoken();
-        $result_quote_deatails      = $this->quotes_model->get_quote_details($inputs);
-        $result_quote_lines         = $this->quotes_model->api_get_quote_line_items($inputs);
-        $result_quote_lines_service = $this->quotes_model->api_get_quote_line_items_service($inputs);
->>>>>>> 47b0e9db1957bfea371b5b2a1c47875fba2d9c92
 
         $dealer_details = $this->dealer_model->get_by_id($result_quote_deatails['dealer_id']);
 
