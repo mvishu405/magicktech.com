@@ -1,7 +1,7 @@
 <?php
 // error_reporting(0);
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+// error_reporting(E_ALL);
+// ini_set('display_errors', 1);
 if (!defined('BASEPATH')) exit('No direct script access allowed');  
 require_once APPPATH."/third_party/PHPExcel.php";
 $admin_discount = 0;
