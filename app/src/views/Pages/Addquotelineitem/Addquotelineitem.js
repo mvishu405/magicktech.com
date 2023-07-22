@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link, BrowserRouter as Router, Route, Redirect, Switch } from "react-router-dom";
+// const GLOBAL = require("../constant");
 
 import {
     ListGroup,
@@ -249,7 +250,8 @@ class Addquotelineitem extends Component {
                     if (responseJson.success == true) {
                         if (responseJson.status == 1) {
                             this.pdflink =
-                                "/api/v2/download/pdf/" +
+                                GLOBAL.BASE_URL +
+                                "api/v2/download/render_pdf/" +
                                 responseJson.quote_id +
                                 "/?type=customer&token=" +
                                 JSON.parse(localStorage.getItem("token"));
@@ -257,7 +259,12 @@ class Addquotelineitem extends Component {
                             this.toggle_cq();
                         } else {
                             this.pdflink =
-                                "/addquotelineitem/?id=" + this.id + "&qid=" + responseJson.quote_id + "&saved=true";
+                                GLOBAL.BASE_URL +
+                                "/addquotelineitem/?id=" +
+                                this.id +
+                                "&qid=" +
+                                responseJson.quote_id +
+                                "&saved=true";
                             this.setState({ status: responseJson.status });
                         }
 
@@ -365,17 +372,21 @@ class Addquotelineitem extends Component {
 
     quote_link_fun(text) {
         return (
-            <Link to={this.pdflink} target={text} className="colorwhite">
-                <button aria-pressed="true" className="btn btn-primary colorwhite px-4 mtb20">
-                    {this.state.status == 1 ? (
-                        <div>
-                            Download <i className="fa fa-file-pdf-o" aria-hidden="true" />
-                        </div>
-                    ) : (
-                        "Continue"
-                    )}
-                </button>
-            </Link>
+            <>
+                <a href={this.pdflink}>Download</a>
+
+                <Link to={this.pdflink} target={text} className="colorwhite">
+                    <button aria-pressed="true" className="btn btn-primary colorwhite px-4 mtb20">
+                        {this.state.status == 1 ? (
+                            <div>
+                                Download <i className="fa fa-file-pdf-o" aria-hidden="true" />
+                            </div>
+                        ) : (
+                            "Continue"
+                        )}
+                    </button>
+                </Link>
+            </>
         );
     }
 
@@ -793,7 +804,7 @@ class ProductTable extends React.Component {
                             <th width="8%">Sub Category</th>
                             <th width="8%">Product</th>
 
-                            <th width="8%">Type</th>
+                            {/* <th width="8%">Type</th> */}
                             <th width="15%">Code</th>
                             <th width="10%">Carcass</th>
                             <th width="10%">Shutter</th>
@@ -867,6 +878,7 @@ class ProductRow extends React.Component {
 
                 {/* >===================> */}
 
+                {/* Code Type */}
                 <EditableCellType
                     onProductTableUpdate={this.props.onProductTableUpdate}
                     cellData={{
@@ -876,6 +888,8 @@ class ProductRow extends React.Component {
                         width: "8%",
                     }}
                 />
+
+                {/* Code */}
                 <EditableCellCode
                     onProductTableUpdate={this.props.onProductTableUpdate}
                     type={this.props.product.cabinet_type_id}
