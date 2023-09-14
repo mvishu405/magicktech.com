@@ -259,12 +259,7 @@ class Addquotelineitem extends Component {
                             this.toggle_cq();
                         } else {
                             this.pdflink =
-                                GLOBAL.BASE_URL +
-                                "/addquotelineitem/?id=" +
-                                this.id +
-                                "&qid=" +
-                                responseJson.quote_id +
-                                "&saved=true";
+                                "/addquotelineitem/?id=" + this.id + "&qid=" + responseJson.quote_id + "&saved=true";
                             this.setState({ status: responseJson.status });
                         }
 
@@ -373,19 +368,25 @@ class Addquotelineitem extends Component {
     quote_link_fun(text) {
         return (
             <>
-                <a href={this.pdflink}>Download</a>
-
-                <Link to={this.pdflink} target={text} className="colorwhite">
-                    <button aria-pressed="true" className="btn btn-primary colorwhite px-4 mtb20">
-                        {this.state.status == 1 ? (
-                            <div>
-                                Download <i className="fa fa-file-pdf-o" aria-hidden="true" />
-                            </div>
-                        ) : (
-                            "Continue"
-                        )}
-                    </button>
-                </Link>
+                {this.state.status == 1 ? (
+                    <>
+                        <a href={this.pdflink} target={text} className="colorwhite">
+                            <button aria-pressed="true" className="btn btn-primary colorwhite px-4 mtb20">
+                                <div>
+                                    Download <i className="fa fa-file-pdf-o" aria-hidden="true" />
+                                </div>
+                            </button>
+                        </a>
+                    </>
+                ) : (
+                    <>
+                        <Link to={this.pdflink} target={text} className="colorwhite">
+                            <button aria-pressed="true" className="btn btn-primary colorwhite px-4 mtb20">
+                                Continue
+                            </button>
+                        </Link>
+                    </>
+                )}
             </>
         );
     }
