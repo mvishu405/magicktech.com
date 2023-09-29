@@ -113,6 +113,8 @@ class Addquotelineitem extends Component {
                 parent_category_id: "",
                 sub_category_id: "",
                 mproduct_id: "",
+
+                images: null,
             },
         ];
 
@@ -335,6 +337,7 @@ class Addquotelineitem extends Component {
             parent_category_id: "",
             sub_category_id: "",
             mproduct_id: "",
+            images: null
         };
         this.state.hide_model = false;
         this.state.line_item_options.push(product);
@@ -353,7 +356,7 @@ class Addquotelineitem extends Component {
         }
 
         var products = this.state.line_item_options.slice();
-        var newProducts = products.map(function(product) {
+        var newProducts = products.map(function (product) {
             for (var key in product) {
                 if (key == item.name && product.id == item.id) {
                     product[key] = item.value;
@@ -487,7 +490,7 @@ class Addquotelineitem extends Component {
         const accessories_discount_opt = this.discount_number_loop(GLOBAL.ACC_DISCOUNT);
 
         const designer_opt = [];
-        this.state.get_designer.map(function(d, idx) {
+        this.state.get_designer.map(function (d, idx) {
             var arr = { value: d.id, label: d.name };
             return designer_opt.push(arr);
         });
@@ -772,7 +775,7 @@ class ProductTable extends React.Component {
         var categories = this.props.categories;
         var mproducts = this.props.mproducts;
         /**-- */
-        var product = this.props.products.map(function(product) {
+        var product = this.props.products.map(function (product) {
             return (
                 <ProductRow
                     hide_model={hide_model}
@@ -796,24 +799,25 @@ class ProductTable extends React.Component {
                 <button type="button" onClick={this.props.onRowAdd} className="btn btn-success pull-right px-4 wa">
                     Add Cabinet
                 </button>
-                <Table hover className="table-outline mb-0 d-none d-sm-table bg_white quote_table">
+                <Table hover className="table-outline mb-0 d-none d-sm-table bg_white quote_table dcQuoteTable">
                     <thead className="thead-light">
                         <tr>
                             <th width="5%">S.No</th>
 
-                            <th width="8%">Parent Category</th>
-                            <th width="8%">Sub Category</th>
-                            <th width="8%">Product</th>
+                            <th width="7%">Parent Category</th>
+                            <th width="7%">Sub Category</th>
+                            <th width="7%">Product</th>
 
                             {/* <th width="8%">Type</th> */}
-                            <th width="15%">Code</th>
-                            <th width="10%">Carcass</th>
-                            <th width="10%">Shutter</th>
+                            <th width="13%">Code</th>
+                            <th width="9%">Carcass</th>
+                            <th width="9%">Shutter</th>
                             <th width="9%">Hinges</th>
                             <th width="9%">Drawers</th>
                             <th width="9%">Handles</th>
                             <th width="9%">Flap Up</th>
                             <th width="7%">Qty</th>
+                            <th width="7%">Upto 5 Images</th>
                             <th width="12%" className="text-center" title="Accessories / Clone / Delete">
                                 A / C / D
                             </th>
@@ -847,7 +851,7 @@ class ProductRow extends React.Component {
                         type: "parent_category_id",
                         value: this.props.product.parent_category_id,
                         id: this.props.product.id,
-                        width: "8%",
+                        width: "10%",
                     }}
                 />
 
@@ -860,7 +864,7 @@ class ProductRow extends React.Component {
                         type: "sub_category_id",
                         value: this.props.product.sub_category_id,
                         id: this.props.product.id,
-                        width: "8%",
+                        width: "13%",
                     }}
                 />
 
@@ -873,7 +877,7 @@ class ProductRow extends React.Component {
                         type: "mproduct_id",
                         value: this.props.product.mproduct_id,
                         id: this.props.product.id,
-                        width: "8%",
+                        width: "13%",
                     }}
                 />
 
@@ -886,7 +890,7 @@ class ProductRow extends React.Component {
                         type: "cabinet_type_id",
                         value: this.props.product.cabinet_type_id,
                         id: this.props.product.id,
-                        width: "8%",
+                        width: "13%",
                     }}
                 />
 
@@ -978,7 +982,18 @@ class ProductRow extends React.Component {
                         width: "7%",
                     }}
                 />
-                <td className="clone-cell" width="12%">
+
+                <EditableCellImages
+                    onProductTableUpdate={this.props.onProductTableUpdate}
+                    cellData={{
+                        type: "images",
+                        value: this.props.product.images,
+                        id: this.props.product.id,
+                        width: "20%",
+                    }}
+                />
+
+                <td className="clone-cell" width="20%">
                     <EditableCellAcc
                         hide_model={this.props.hide_model}
                         onProductTableUpdate={this.props.onProductTableUpdate}
@@ -1196,7 +1211,7 @@ class EditableCellCode extends React.Component {
         });
 
         let codes = [];
-        filter_code.forEach(function(res, key) {
+        filter_code.forEach(function (res, key) {
             var array = {
                 value: res.id,
                 label: res.code + "-" + res.description,
@@ -1415,5 +1430,96 @@ class EditableCell extends React.Component {
         );
     }
 }
+
+
+// Images Cell
+
+
+class EditableCellImages extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            selectedImages: [],
+            uploadedImages: [], // Store the uploaded image paths here
+        };
+    }
+
+    handleImageChange = (e) => {
+        const files = Array.from(e.target.files);
+
+        // Limit the number of selected images to 5
+        if (files.length > 5) {
+            alert('You can select up to 5 images.');
+            e.target.value = null;
+            return;
+        }
+
+        this.setState({ selectedImages: files }, () => {
+            this.handleUpload();
+        });
+    };
+
+    handleUpload = async () => {
+        const formData = new FormData();
+
+        this.state.selectedImages.forEach((image, index) => {
+            formData.append(`files[${index + 1}]`, image);
+        });
+
+        formData.append("dealer_id", "10");
+        formData.append("customer_id", "5");
+
+        try {
+            // Make an API request to upload images
+            const response = await fetch(`${GLOBAL.BASE_URL}api/v2/quotes/addQuoteImages`, {
+                method: 'POST',
+                body: formData,
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                console.log(data);
+
+                // Update the uploaded images in state
+                this.setState({ uploadedImages: data.data }, () => {
+                    this.props.onProductTableUpdate({
+                        target: { id: this.props.cellData.id, name: this.props.cellData.type, value: data.data },
+                    });
+                });
+            } else {
+                alert('Error uploading images');
+            }
+        } catch (error) {
+            console.error('API request error:', error);
+            alert('An error occurred while uploading images.');
+        }
+    };
+
+    render() {
+        return (
+            <td width={this.props.cellData.width}>
+                <input name={this.props.cellData.type}
+                    id={this.props.cellData.id}
+                    // value={this.props.cellData.value}
+                    type="file" multiple onChange={this.handleImageChange} />
+                {/* <span className="err">Max 5!</span> */}
+                {/* <div>
+                    {this.state.uploadedImages.map((imagePath, index) => (
+                        <img
+                            key={index}
+                            src={`${GLOBAL.BASE_URL}api/v2/` + imagePath}
+                            alt={`Uploaded Image ${index}`}
+                            width="150"
+                            height="150"
+                        />
+                    ))}
+                </div> */}
+            </td>
+        );
+    }
+}
+
+
+
 
 export default Addquotelineitem;

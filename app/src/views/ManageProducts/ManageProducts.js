@@ -37,7 +37,8 @@ class ManageProducts extends Component {
 
     async fetchProducts() {
         try {
-            const products = await this.productService.getAllProducts();
+            let products = await this.productService.getAllProducts();
+            products = products.sort((a, b) => b.id - a.id);
             this.setState({ products, loading: false });
         } catch (error) {
             console.log("Error fetching products:", error);

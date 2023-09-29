@@ -33,7 +33,7 @@ class AddUpdateProducts extends Component {
     async fetchCategories() {
         try {
             const categories = await this.categoryService.getAllCategories();
-            this.setState({ categories });
+            this.setState({ categories: categories.filter(x => x.parent_id !== null) });
         } catch (error) {
             console.log("Failed to fetch categories:", error);
         }

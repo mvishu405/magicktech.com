@@ -342,3 +342,16 @@ a.product_download .fa{color:#fff;}
 		.header-fixed .app-body{margin-top:0 !important}
 		.header-fixed .app-header{position:inherit !important;}
 	}
+
+.dcQuoteTable {
+    width: auto !important;
+    max-width: none !important;
+}
+
+.dcQuoteTable thead {
+    table-layout: unset !important;
+    display: table-row;
+}
+.dcQuoteTable thead tr th {
+    white-space: nowrap;
+}

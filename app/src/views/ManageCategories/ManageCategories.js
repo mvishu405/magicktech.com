@@ -25,7 +25,8 @@ class ManageCategories extends Component {
 
     async fetchCategories() {
         try {
-            const categories = await this.categoriesService.getAllCategories();
+            let categories = await this.categoriesService.getAllCategories();
+            categories = categories.sort((a, b) => b.id - a.id);
             this.setState({ categories, loading: false });
         } catch (error) {
             console.log("Error fetching categories:", error);

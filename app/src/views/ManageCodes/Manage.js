@@ -125,7 +125,13 @@ class Manage extends Component {
         }
         const { data, pages, loading, list } = this.state;
 
-        console.log(`Render ${loading} =====>`, data, list);
+        // Sort the data array by the "Id" column in descending order
+        const sortedData = [...list].sort((a, b) => {
+            return b.id - a.id; // Assuming "id" is a numeric property
+        });
+
+
+        console.log(`Render Data =====>`, data, `Render LIST`, list);
 
         return (
             <div className="react_table animated fadeIn">
@@ -147,9 +153,14 @@ class Manage extends Component {
                                             Header: "Id",
                                             id: "id",
                                             maxWidth: 60,
-                                            accessor: (d) => d.id,
+                                            accessor: (d) => parseInt(d.id),
                                             filterable: false,
                                             className: "text-center",
+                                            sortMethod: (a, b) => {
+                                                return parseInt(b) - parseInt(a);
+                                            },
+                                            // Apply numeric sorting
+                                            // sortType: "basic",
                                         },
                                         {
                                             Header: "Code",
@@ -219,11 +230,11 @@ class Manage extends Component {
                                             ),
                                         },
                                     ]}
-                                    manual
-                                    data={data}
-                                    pages={pages}
-                                    loading={loading}
-                                    onFetchData={this.fetchData.bind(this)}
+                                    // manual
+                                    data={sortedData}
+                                    // pages={pages}
+                                    // loading={loading}
+                                    // onFetchData={this.fetchData.bind(this)}
                                     filterable
                                     defaultPageSize={10}
                                     className="-striped -highlight"
