@@ -680,14 +680,33 @@ class Dealerquote extends Component {
     updateValidDays = (row, days) => {
         const quote_id = row._original.quote_id;
         const valid_days = days;
+
         // You can use fetch or any other API library here
         fetch(`${GLOBAL.BASE_URL}api/v2/quotes/updateQuoteValidity`, {
             method: "POST",
             body: JSON.stringify({ quote_id: parseInt(quote_id), valid_days: parseInt(valid_days) }),
         })
             .then((response) => response.json())
-            .then((data) => {
-                // Handle the API response as needed
+            .then((datam) => {
+                // Handle the API response as neede\
+
+
+                const { data } = this.state;
+
+                const dataRK = data.map(datai => {
+                    if (datai.quote_id === quote_id) {
+                        datai.valid_days = days;
+                    }
+                    return datai;
+                });
+
+                console.log(dataRK)
+
+                this.setState({
+                    data: dataRK
+                })
+
+
                 if (data.success) {
                     // Update the state or show a success message
                 } else {
@@ -726,17 +745,17 @@ class Dealerquote extends Component {
                                     },
                                     {
                                         Header: "Valid Days",
-                                        accessor: "valid_days",
+                                        id: "valid_days",
                                         maxWidth: 100,
                                         className: "text-center",
                                         filterable: false,
-                                        // You can access it using d.valid_days
+                                        accessor: d => d.valid_days,
+                                        // You can access it using d.c
                                         Cell: ({ row }) => (
                                             <div>
                                                 {row._original.valid_days}
                                                 <input
                                                     type="number"
-                                                    // value={row._original.valid_days}
                                                     onChange={(e) => this.updateValidDays(row, e.target.value)}
                                                 />
                                             </div>
